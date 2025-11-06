@@ -4,20 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="" />
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/src/main/java/com/ticking/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-gateway/src/main/java/com/ticking/GateWayApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/UserApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/UserApplication.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="workspaceImportEnabled" value="true" />
-      </MavenImportingSettings>
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
     </option>
   </component>
   <component name="ProjectId" id="3509p3mAyK1xJsD2qd5FZmf19Bf" />
@@ -31,14 +40,24 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/A_BYSJSystem/before/ticketing-system",
+    "last_opened_file_path": "E:/A_BYSJSystem/ticketing-system",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "spring.configuration.checksum": "4fddcbc9789f3cefb88cc66ea18b67bd",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="UserApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ticketing-system-user" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ticking.UserApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -49,10 +68,27 @@
       <updated>1762236304297</updated>
       <workItem from="1762236305444" duration="96000" />
       <workItem from="1762236465863" duration="5755000" />
+      <workItem from="1762415303126" duration="60000" />
+      <workItem from="1762419677407" duration="2070000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中" />
   </component>
 </project>

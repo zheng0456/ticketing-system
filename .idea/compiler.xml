@@ -10,6 +10,11 @@
         <module name="ticketing-system-gateway" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ticketing-system" target="17" />
+      <module name="ticketing-system-gateway" target="17" />
+      <module name="ticketing-system-user" target="17" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

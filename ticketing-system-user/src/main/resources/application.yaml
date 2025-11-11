@@ -1,7 +1,7 @@
 spring:
   application:
     #注:SpringCloud中使用负载均衡和Gateway网关时，都要求应用名称中不能出现下划线，因此应用名称我们用中划线“-”
-    name: gateway
+    name: service-user
   cloud:
     nacos:
       config:
@@ -9,6 +9,8 @@ spring:
   config:
     import:
       - optional:nacos:${spring.application.name}.yaml
+      - optional:nacos:db-common.yaml
+      - nacos:nacos-discovery.yaml
 logging:
   level:
     com.alibaba.cloud.nacos: debug

@@ -6,6 +6,6 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface UserMapper {
-    @Select("SELECT * from user where ")
-    UserEntity login(UserEntity user);
+    @Select("SELECT * from user where userId =1  ")
+    UserEntity login(String userid);
 }

@@ -8,6 +8,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 public class UserEntity {
+
     private Integer userId;  // id
     private String userName;   //用户名
     private String password;   //密码

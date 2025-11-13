@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class UserController {
@@ -15,8 +16,9 @@ public class UserController {
      * 登录
      */
     @PostMapping("/login")
+    @ResponseBody
     public String login(UserEntity user) {
-        UserEntity users=userService.login(user);
+        UserEntity users=userService.login("user");
         return "/index";
     }
 }

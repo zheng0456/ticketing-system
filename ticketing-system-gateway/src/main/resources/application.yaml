@@ -9,6 +9,10 @@ spring:
   config:
     import:
       - optional:nacos:${spring.application.name}.yaml
+      - optional:nacos:db-common.yaml
+  main:
+    web-application-type: reactive  # 添加这行配置
 logging:
   level:
     com.alibaba.cloud.nacos: debug
+

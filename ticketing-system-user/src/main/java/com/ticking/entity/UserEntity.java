@@ -9,11 +9,13 @@ import lombok.NoArgsConstructor;
 @Data
 public class UserEntity {
 
-    private Integer userId;  // id
-    private String userName;   //用户名
-    private String password;   //密码
-    private String phone;     //手机号
-    private String address;   // 地址
-    private Integer sign;   //标记 标记用户=0 商家=1 管理员=2
-    private Integer dr;     //删除标记 0正常 1删除
+    private Integer userId;     //用户id
+    private String userName;    //用户名
+    private String password;     //用户密码
+    private String realName;   //真实姓名
+    private String idCard;     //身份证号
+    private String phone;      //手机号
+    private String email;      //邮箱
+    private String registerTime;   //注册时间
+    private Integer status;       //状态
 }

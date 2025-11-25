@@ -4,12 +4,11 @@ import com.ticking.entity.RestUtil;
 import com.ticking.entity.UserEntity;
 import com.ticking.service.IUserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 public class UserController {
     @Autowired
     IUserService userService;
@@ -17,7 +16,7 @@ public class UserController {
      * 登录
      */
     @PostMapping("/login")
-    public RestUtil login(UserEntity user) {
+    public RestUtil login(@RequestBody UserEntity user) {
         Boolean result=userService.login(user);
         if (result==true){
             return RestUtil.success();
@@ -27,7 +26,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public RestUtil register(UserEntity user) {
+    public RestUtil register(@RequestBody UserEntity user) {
         Boolean result=userService.register(user);
         if (result==true){
             return RestUtil.success();

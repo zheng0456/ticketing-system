@@ -5,29 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(user): 实现用户登录和注册功能&#10;&#10;- 修改 IUserService 接口，新增 register 方法并调整 login 方法参数类型&#10;- 更新 UserController，使用 RestUtil 统一返回格式处理登录和注册逻辑&#10;- 扩展 UserEntity 实体类字段，增加真实姓名、身份证号、邮箱等属性&#10;- 修改 UserMapper，实现基于注解的登录验证和用户注册 SQL 操作&#10;- UserServiceImpl 中完善登录与注册业务逻辑，加入用户名重复检查机制&#10;- 添加 CorsConfig 配置类解决跨域问题&#10;- 为 gateway 模块引入 spring-cloud-starter-loadbalancer 依赖&#10;- 新增 RestUtil 工具类用于统一接口响应格式&#10;- 更新相关 Maven 依赖库版本并在 workspace.xml 中反映变更记录">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_stoyanr_evictor_1_0_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_boot_spring_boot_starter_cache_3_2_2.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_loadbalancer_4_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_loadbalancer_4_1_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_spring_context_support_6_1_3.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-gateway/src/main/java/com/ticking/config/CorsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/RestUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/TrainTicketEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-gateway/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/ticketing-system-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-gateway/ticketing-system-gateway.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/RestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/RestUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/UserEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/UserApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/UserEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/IUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/impl/UserServiceImpl.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,7 +115,10 @@
       <workItem from="1762942496257" duration="24964000" />
       <workItem from="1763081179848" duration="227000" />
       <workItem from="1763106009178" duration="2655000" />
-      <workItem from="1763603951253" duration="9701000" />
+      <workItem from="1763603951253" duration="17344000" />
+      <workItem from="1763948487570" duration="611000" />
+      <workItem from="1763983603172" duration="593000" />
+      <workItem from="1764041739090" duration="2895000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -172,5 +159,21 @@
     <MESSAGE value="feat(user): 实现用户注册功能并优化登录逻辑&#10;&#10;- 修改 IUserService 接口，将 login 方法参数改为 UserEntity 类型，并新增 register 方法&#10;- 在 UserController 中增加 /register 接口，调用 userService.register 处理用户注册请求&#10;- 更新 UserEntity 实体类字段，补充真实姓名、身份证号、邮箱、注册时间等属性&#10;- 调整 UserMapper 的 login 查询语句，根据用户名和密码进行匹配查询&#10;- 删除无用的 imports 和注释，简化 UserServiceImpl 实现代码&#10;- 新增 RestUtil 工具类用于统一返回结果格式&#10;- 为网关服务添加 spring-cloud-starter-loadbalancer 依赖以支持负载均衡&#10;- 注释掉 spring-boot-starter-security 依赖，暂不启用安全框架" />
     <MESSAGE value="feat(user): 实现用户登录和注册功能&#10;&#10;- 修改 IUserService 接口，新增 register 方法并调整 login 方法参数类型&#10;- 更新 UserController，使用 RestUtil 统一返回格式处理登录和注册逻辑&#10;- 扩展 UserEntity 实体类字段，增加真实姓名、身份证号、邮箱等属性&#10;- 修改 UserMapper，实现基于注解的登录验证和用户注册 SQL 操作&#10;- UserServiceImpl 中完善登录与注册业务逻辑，加入用户名重复检查机制&#10;- 添加 CorsConfig 配置类解决跨域问题&#10;- 为 gateway 模块引入 spring-cloud-starter-loadbalancer 依赖&#10;- 新增 RestUtil 工具类用于统一接口响应格式&#10;- 更新相关 Maven 依赖库版本并在 workspace.xml 中反映变更记录" />
     <option name="LAST_COMMIT_MESSAGE" value="feat(user): 实现用户登录和注册功能&#10;&#10;- 修改 IUserService 接口，新增 register 方法并调整 login 方法参数类型&#10;- 更新 UserController，使用 RestUtil 统一返回格式处理登录和注册逻辑&#10;- 扩展 UserEntity 实体类字段，增加真实姓名、身份证号、邮箱等属性&#10;- 修改 UserMapper，实现基于注解的登录验证和用户注册 SQL 操作&#10;- UserServiceImpl 中完善登录与注册业务逻辑，加入用户名重复检查机制&#10;- 添加 CorsConfig 配置类解决跨域问题&#10;- 为 gateway 模块引入 spring-cloud-starter-loadbalancer 依赖&#10;- 新增 RestUtil 工具类用于统一接口响应格式&#10;- 更新相关 Maven 依赖库版本并在 workspace.xml 中反映变更记录" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java</url>
+          <line>29</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

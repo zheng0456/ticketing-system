@@ -12,15 +12,15 @@ public class RestUtil {
     private Object data;
     private Integer code;
     public static RestUtil success(){
-        return new RestUtil("success",null,200);
+        return new RestUtil(null,null,200);
     }
     public static RestUtil success(Object data){
-        return new RestUtil("success",data,200);
+        return new RestUtil(null,data,200);
     }
     public static RestUtil error(String msg){
-        return new RestUtil(msg,null,500);
+        return new RestUtil(msg,null,400);
     }
     public static RestUtil error(String msg,Object data){
-        return new RestUtil(msg,data,500);
+        return new RestUtil(msg,data,400);
     }
 }

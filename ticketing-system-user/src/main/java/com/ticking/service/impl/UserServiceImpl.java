@@ -19,8 +19,11 @@ public class UserServiceImpl  implements IUserService {
      */
     @Override
     public Boolean login(UserEntity user) {
-        Boolean result=userMapper.login(user.getUserName(),user.getPassword());
-        return result;
+        UserEntity result=userMapper.login(user.getUserName(),user.getPassword());
+        if (result==null){
+            return false;
+        }
+        return true;
     }
 
     /**
@@ -29,14 +32,14 @@ public class UserServiceImpl  implements IUserService {
     @Override
     public Boolean register(UserEntity user) {
         // 判断用户名是否已存在
-        Boolean result=userMapper.login(user.getUserName(),user.getPassword());
-        if (result==false){
+        UserEntity result=userMapper.login(user.getUserName(),user.getPassword());
+        if (result==null){
             // 获取当前时间
             LocalDateTime now = LocalDateTime.now();
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss");
             String dataTime = now.format(formatter);
-            result=userMapper.register(user.getUserName(),user.getPassword(),user.getPhone(),dataTime);
-            return result;
+            Boolean users=userMapper.register(user.getUserName(),user.getPassword(),user.getPhone(),dataTime);
+            return users;
         }else {
             return false;
         }

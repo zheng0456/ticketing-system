@@ -22,7 +22,7 @@ public class UserEntity {
     private String phone;      //手机号
     private String registerTime;  //注册时间
     private String email;      //邮箱
-    private Integer status;       //状态
+    private Boolean status;       //状态
     private String lastLoginTime; //最后登录时间
-    private Integer userQxCode;   //用户权限码
+    private Integer userQxCode;   //用户权限码  1：普通用户  2：管理员 3：超级管理员 4：商家
 }

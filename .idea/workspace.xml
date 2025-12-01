@@ -4,14 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(user): 实现用户登录和注册功能&#10;&#10;- 修改 IUserService 接口，新增 register 方法并调整 login 方法参数类型&#10;- 更新 UserController，使用 RestUtil 统一返回格式处理登录和注册逻辑&#10;- 扩展 UserEntity 实体类字段，增加真实姓名、身份证号、邮箱等属性&#10;- 修改 UserMapper，实现基于注解的登录验证和用户注册 SQL 操作&#10;- UserServiceImpl 中完善登录与注册业务逻辑，加入用户名重复检查机制&#10;- 添加 CorsConfig 配置类解决跨域问题&#10;- 为 gateway 模块引入 spring-cloud-starter-loadbalancer 依赖&#10;- 新增 RestUtil 工具类用于统一接口响应格式&#10;- 更新相关 Maven 依赖库版本并在 workspace.xml 中反映变更记录">
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/TrainTicketEntity.java" afterDir="false" />
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(user): 完善用户登录注册功能及实体类定义&#10;&#10;- 修改 RestUtil 工具类，统一成功和错误响应的状态码与消息格式&#10;- 新增多个火车票务相关实体类：StudentDiscountEntity、TrainCarriageEntity、&#10;  TrainEntity、TrainPassStationEntity、TrainSeatEntity、TrainStationEntity、&#10;  TrainTicketEntity&#10;- 重构 UserController，使用 @RestController 和 @RequestBody 注解优化接&#10;  口设计&#10;- 调整 UserEntity 实体类字段类型和顺序，增加用户权限码和最后登录时间字段&#10;- 修改 UserMapper，修正 SQL 查询语句并调整返回值类型以适配登录逻辑&#10;- 优化 UserServiceImpl 中的登录与注册业务逻辑，增强空值判断和重复用户名检&#10;  查机制">
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/RoleEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/RestUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/RestUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/UserEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +58,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/A_BYSJSystem/ticketing-system&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/1/trainOrderSystem&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -118,7 +118,10 @@
       <workItem from="1763603951253" duration="17344000" />
       <workItem from="1763948487570" duration="611000" />
       <workItem from="1763983603172" duration="593000" />
-      <workItem from="1764041739090" duration="2895000" />
+      <workItem from="1764041739090" duration="7038000" />
+      <workItem from="1764205149404" duration="2519000" />
+      <workItem from="1764321218077" duration="2511000" />
+      <workItem from="1764555454611" duration="9152000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -134,7 +137,28 @@
       <option name="project" value="LOCAL" />
       <updated>1762842980302</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat(user): 完善用户登录注册功能及实体类定义&#10;&#10;- 修改 RestUtil 工具类，统一成功和错误响应的状态码与消息格式&#10;- 新增多个火车票务相关实体类：StudentDiscountEntity、TrainCarriageEntity、&#10;  TrainEntity、TrainPassStationEntity、TrainSeatEntity、TrainStationEntity、&#10;  TrainTicketEntity&#10;- 重构 UserController，使用 @RestController 和 @RequestBody 注解优化接&#10;  口设计&#10;- 调整 UserEntity 实体类字段类型和顺序，增加用户权限码和最后登录时间字段&#10;- 修改 UserMapper，修正 SQL 查询语句并调整返回值类型以适配登录逻辑&#10;- 优化 UserServiceImpl 中的登录与注册业务逻辑，增强空值判断和重复用户名检&#10;  查机制">
+      <created>1764050073340</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1764050073340</updated>
+    </task>
+    <task id="LOCAL-00004" summary="feat(user): 完善用户登录注册功能及实体类定义&#10;&#10;- 修改 RestUtil 工具类，统一成功和错误响应的状态码与消息格式&#10;- 新增多个火车票务相关实体类：StudentDiscountEntity、TrainCarriageEntity、&#10;  TrainEntity、TrainPassStationEntity、TrainSeatEntity、TrainStationEntity、&#10;  TrainTicketEntity&#10;- 重构 UserController，使用 @RestController 和 @RequestBody 注解优化接&#10;  口设计&#10;- 调整 UserEntity 实体类字段类型和顺序，增加用户权限码和最后登录时间字段&#10;- 修改 UserMapper，修正 SQL 查询语句并调整返回值类型以适配登录逻辑&#10;- 优化 UserServiceImpl 中的登录与注册业务逻辑，增强空值判断和重复用户名检&#10;  查机制">
+      <created>1764055314262</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1764055314262</updated>
+    </task>
+    <task id="LOCAL-00005" summary="feat(user): 完善用户登录注册功能及实体类定义&#10;&#10;- 修改 RestUtil 工具类，统一成功和错误响应的状态码与消息格式&#10;- 新增多个火车票务相关实体类：StudentDiscountEntity、TrainCarriageEntity、&#10;  TrainEntity、TrainPassStationEntity、TrainSeatEntity、TrainStationEntity、&#10;  TrainTicketEntity&#10;- 重构 UserController，使用 @RestController 和 @RequestBody 注解优化接&#10;  口设计&#10;- 调整 UserEntity 实体类字段类型和顺序，增加用户权限码和最后登录时间字段&#10;- 修改 UserMapper，修正 SQL 查询语句并调整返回值类型以适配登录逻辑&#10;- 优化 UserServiceImpl 中的登录与注册业务逻辑，增强空值判断和重复用户名检&#10;  查机制">
+      <created>1764572944857</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1764572944857</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -158,14 +182,16 @@
     <MESSAGE value="chore(deps): 更新项目依赖库版本并调整配置- 将 spring-cloud-alibaba 相关依赖版本从2023.0.1.2降级至2023.0.1.0&#10;- 移除 mybatis-plus 相关依赖库- 添加 sentinel、druid、fastjson2 等新依赖库&#10;- 在 application.yaml 中为网关服务添加 web-application-type 配置&#10;-为用户服务添加 MyBatis 配置及调试模式开关&#10;- 更新 IDEA 编译器配置，启用默认注解处理并添加模块参数选项&#10;- 修改 IUserService 接口方法参数类型由 UserEntity 改为 String" />
     <MESSAGE value="feat(user): 实现用户注册功能并优化登录逻辑&#10;&#10;- 修改 IUserService 接口，将 login 方法参数改为 UserEntity 类型，并新增 register 方法&#10;- 在 UserController 中增加 /register 接口，调用 userService.register 处理用户注册请求&#10;- 更新 UserEntity 实体类字段，补充真实姓名、身份证号、邮箱、注册时间等属性&#10;- 调整 UserMapper 的 login 查询语句，根据用户名和密码进行匹配查询&#10;- 删除无用的 imports 和注释，简化 UserServiceImpl 实现代码&#10;- 新增 RestUtil 工具类用于统一返回结果格式&#10;- 为网关服务添加 spring-cloud-starter-loadbalancer 依赖以支持负载均衡&#10;- 注释掉 spring-boot-starter-security 依赖，暂不启用安全框架" />
     <MESSAGE value="feat(user): 实现用户登录和注册功能&#10;&#10;- 修改 IUserService 接口，新增 register 方法并调整 login 方法参数类型&#10;- 更新 UserController，使用 RestUtil 统一返回格式处理登录和注册逻辑&#10;- 扩展 UserEntity 实体类字段，增加真实姓名、身份证号、邮箱等属性&#10;- 修改 UserMapper，实现基于注解的登录验证和用户注册 SQL 操作&#10;- UserServiceImpl 中完善登录与注册业务逻辑，加入用户名重复检查机制&#10;- 添加 CorsConfig 配置类解决跨域问题&#10;- 为 gateway 模块引入 spring-cloud-starter-loadbalancer 依赖&#10;- 新增 RestUtil 工具类用于统一接口响应格式&#10;- 更新相关 Maven 依赖库版本并在 workspace.xml 中反映变更记录" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(user): 实现用户登录和注册功能&#10;&#10;- 修改 IUserService 接口，新增 register 方法并调整 login 方法参数类型&#10;- 更新 UserController，使用 RestUtil 统一返回格式处理登录和注册逻辑&#10;- 扩展 UserEntity 实体类字段，增加真实姓名、身份证号、邮箱等属性&#10;- 修改 UserMapper，实现基于注解的登录验证和用户注册 SQL 操作&#10;- UserServiceImpl 中完善登录与注册业务逻辑，加入用户名重复检查机制&#10;- 添加 CorsConfig 配置类解决跨域问题&#10;- 为 gateway 模块引入 spring-cloud-starter-loadbalancer 依赖&#10;- 新增 RestUtil 工具类用于统一接口响应格式&#10;- 更新相关 Maven 依赖库版本并在 workspace.xml 中反映变更记录" />
+    <MESSAGE value="feat(user): 完善用户登录注册功能及相关实体类&#10;&#10;- 修改 RestUtil 工具类，统一成功和错误响应格式，调整状态码&#10;- 新增多个火车票务相关实体类：TrainTicketEntity、StudentDiscountEntity、TrainCarriageEntity、TrainEntity、TrainPassStationEntity、TrainSeatEntity、TrainStationEntity&#10;- UserController 使用 @RestController 注解并添加 @RequestBody 参数绑定&#10;- UserEntity 实体类字段类型和顺序优化，新增用户权限码和最后登录时间&#10;- UserMapper 调整 SQL 查询语句及参数占位符，login 方法返回 UserEntity 对象&#10;- UserServiceImpl 完善登录与注册业务逻辑，增强空值判断和结果处理" />
+    <MESSAGE value="feat(user): 完善用户登录注册功能及实体类定义&#10;&#10;- 修改 RestUtil 工具类，统一成功和错误响应的状态码与消息格式&#10;- 新增多个火车票务相关实体类：StudentDiscountEntity、TrainCarriageEntity、&#10;  TrainEntity、TrainPassStationEntity、TrainSeatEntity、TrainStationEntity、&#10;  TrainTicketEntity&#10;- 重构 UserController，使用 @RestController 和 @RequestBody 注解优化接&#10;  口设计&#10;- 调整 UserEntity 实体类字段类型和顺序，增加用户权限码和最后登录时间字段&#10;- 修改 UserMapper，修正 SQL 查询语句并调整返回值类型以适配登录逻辑&#10;- 优化 UserServiceImpl 中的登录与注册业务逻辑，增强空值判断和重复用户名检&#10;  查机制" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(user): 完善用户登录注册功能及实体类定义&#10;&#10;- 修改 RestUtil 工具类，统一成功和错误响应的状态码与消息格式&#10;- 新增多个火车票务相关实体类：StudentDiscountEntity、TrainCarriageEntity、&#10;  TrainEntity、TrainPassStationEntity、TrainSeatEntity、TrainStationEntity、&#10;  TrainTicketEntity&#10;- 重构 UserController，使用 @RestController 和 @RequestBody 注解优化接&#10;  口设计&#10;- 调整 UserEntity 实体类字段类型和顺序，增加用户权限码和最后登录时间字段&#10;- 修改 UserMapper，修正 SQL 查询语句并调整返回值类型以适配登录逻辑&#10;- 优化 UserServiceImpl 中的登录与注册业务逻辑，增强空值判断和重复用户名检&#10;  查机制" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java</url>
-          <line>29</line>
+          <line>32</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">

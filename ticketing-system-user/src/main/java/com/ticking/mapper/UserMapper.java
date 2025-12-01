@@ -12,4 +12,5 @@ public interface UserMapper {
 
     @Insert("INSERT INTO user(user_name,password,phone,register_time,status) VALUES (#{userName},#{password},#{phone},#{dataTime},1)")
     Boolean register(String userName, String password, String phone,String dataTime);
+
 }

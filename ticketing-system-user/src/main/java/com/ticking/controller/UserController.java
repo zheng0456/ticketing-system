@@ -25,6 +25,9 @@ public class UserController {
         }
     }
 
+    /**
+     * 注册
+     */
     @PostMapping("/register")
     public RestUtil register(@RequestBody UserEntity user) {
         Boolean result=userService.register(user);

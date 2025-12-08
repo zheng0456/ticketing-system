@@ -4,6 +4,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 /**
@@ -25,4 +26,7 @@ public class TrainEntity {
     private String createTime;      // 创建时间
     private List<TrainCarriageEntity> trainCarriages;  // 车次车厢列表
     private int sum;   //载客量
+    private String maintenance_time;   //维护时间
+    private String note;  //备注
+    private BigDecimal fuyi_time;   //服役年限
 }

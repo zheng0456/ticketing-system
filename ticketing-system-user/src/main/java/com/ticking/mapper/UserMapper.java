@@ -7,6 +7,9 @@ import org.apache.ibatis.annotations.Select;
 
 @Mapper
 public interface UserMapper {
+    /**
+     * 通过用户名 密码 获取用户信息
+     */
     @Select("select * from user where user_name=#{userName} and password=#{password} and status=1")
     UserEntity login(String userName, String password);
 

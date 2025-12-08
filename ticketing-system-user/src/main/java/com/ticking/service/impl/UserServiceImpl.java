@@ -18,12 +18,9 @@ public class UserServiceImpl  implements IUserService {
      * 登录
      */
     @Override
-    public Boolean login(UserEntity user) {
-        UserEntity result=userMapper.login(user.getUserName(),user.getPassword());
-        if (result==null){
-            return false;
-        }
-        return true;
+    public UserEntity login(String userName, String password) {
+        UserEntity user=userMapper.login(userName, password);
+        return user;
     }
 
     /**

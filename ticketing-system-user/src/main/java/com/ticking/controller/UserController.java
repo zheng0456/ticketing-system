@@ -3,26 +3,34 @@ package com.ticking.controller;
 import com.ticking.entity.RestUtil;
 import com.ticking.entity.UserEntity;
 import com.ticking.service.IUserService;
+import jakarta.servlet.http.HttpSession;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class UserController {
     @Autowired
     IUserService userService;
     /**
      * 登录
      */
-    @PostMapping("/login")
-    public RestUtil login(@RequestBody UserEntity user) {
-        Boolean result=userService.login(user);
-        if (result==true){
-            return RestUtil.success();
+    @RequestMapping("/login")
+    public @ResponseBody String login(@RequestBody String userName, String password, HttpSession  session) {
+        UserEntity user=userService.login(userName, password);
+        if (user!=null){
+            // 判断用户权限 1：普通用户  2：管理员
+            if (user.getUserQxCode()==1){
+                session.setAttribute("user",user);
+                return "/index";
+            }else if (user.getUserQxCode()==2){
+                session.setAttribute("user",user);
+                return "/admin";
+            }
         }else {
-            return RestUtil.error("用户名或密码错误");
+            return "用户名或密码错误";
         }
+        return "用户名或密码错误";
     }
 
     /**

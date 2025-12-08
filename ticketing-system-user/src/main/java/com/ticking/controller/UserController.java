@@ -15,29 +15,29 @@ public class UserController {
     /**
      * 登录
      */
-    @RequestMapping("/login")
-    public @ResponseBody String login(@RequestBody String userName, String password, HttpSession  session) {
-        UserEntity user=userService.login(userName, password);
+    @PostMapping("/login")
+    public @ResponseBody RestUtil login(@RequestBody UserEntity users, HttpSession  session) {
+        UserEntity user=userService.login(users.getUserName(), users.getPassword());
         if (user!=null){
             // 判断用户权限 1：普通用户  2：管理员
             if (user.getUserQxCode()==1){
                 session.setAttribute("user",user);
-                return "/index";
+                return RestUtil.success("/index",user);
             }else if (user.getUserQxCode()==2){
                 session.setAttribute("user",user);
-                return "/admin";
+                return RestUtil.success("/admin",user);
             }
         }else {
-            return "用户名或密码错误";
+            return RestUtil.error("用户名或密码错误");
         }
-        return "用户名或密码错误";
+        return RestUtil.error("用户名或密码错误");
     }
 
     /**
      * 注册
      */
     @PostMapping("/register")
-    public RestUtil register(@RequestBody UserEntity user) {
+    public @ResponseBody RestUtil register(@RequestBody UserEntity user) {
         Boolean result=userService.register(user);
         if (result==true){
             return RestUtil.success();

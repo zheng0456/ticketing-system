@@ -7,6 +7,11 @@ import org.springframework.web.cors.reactive.CorsWebFilter;
 import org.springframework.web.cors.reactive.UrlBasedCorsConfigurationSource;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
+
+/**
+ * 跨域配置  允许跨域访问 接受所有请求
+ */
+
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
 

@@ -11,4 +11,8 @@ public interface IAdminTrainStationService {
     Boolean addTrainStation(TrainStationEntity trainStation);
 
     Boolean updateTrainStation(Long id, Map<String,Object> trainStation);
+
+    Boolean deleteTrainStation(Long id);
+
+    Boolean deleteTrainStations(Long[] id);
 }

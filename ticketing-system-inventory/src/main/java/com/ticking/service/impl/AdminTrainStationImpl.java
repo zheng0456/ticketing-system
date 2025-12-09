@@ -58,4 +58,33 @@ public class AdminTrainStationImpl implements IAdminTrainStationService {
         }
         return result;
     }
+
+    /**
+     * 删除车次站点
+     */
+    @Override
+    public Boolean deleteTrainStation(Long id) {
+        Boolean result=false;
+        if (id!=null){
+            result=adminTrainStationMapper.deleteTrainStation(id);
+        }
+        else {
+            result=false;
+        }
+        return result;
+    }
+
+    /**
+     * 批量删除车次站点
+     */
+    @Override
+    public Boolean deleteTrainStations(Long[] id) {
+        Boolean result=false;
+        if (id!=null){
+            for (Long i:id){
+                result=adminTrainStationMapper.deleteTrainStation(i);
+            }
+        }
+        return result;
+    }
 }

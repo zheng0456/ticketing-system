@@ -4,7 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train-station): 实现车次站点管理功能&#10;&#10;- 新增管理员车次站点控制器，提供查询和添加接口&#10;- 实现车次站点服务接口及其实现类&#10;- 配置MyBatis注解映射SQL语句&#10;- 扩展TrainStationEntity实体类字段，包括状态、地址、备注和创建时间&#10;- 完善前后端交互的数据封装与错误处理逻辑">
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train-station): 实现车次站点修改功能&#10;&#10;- 在控制器中添加 PUT 接口用于更新车次站点信息&#10;- 实现服务层更新车次站点的业务逻辑&#10;- 使用 MyBatis 注解配置更新 SQL 语句&#10;- 扩展接口参数支持接收站点名称、省份、城市等字段&#10;- 完善数据校验与错误处理机制">
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/BatchDeleteException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainStationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainStationMapper.java" afterDir="false" />
@@ -93,7 +94,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserApplication">
+  <component name="RunManager" selected="Spring Boot.InventoryApplication">
     <configuration name="GateWayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ticketing-system-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ticking.GateWayApplication" />
@@ -145,7 +146,7 @@
       <workItem from="1764321218077" duration="2511000" />
       <workItem from="1764555454611" duration="15339000" />
       <workItem from="1765155410994" duration="18986000" />
-      <workItem from="1765243167830" duration="13418000" />
+      <workItem from="1765243167830" duration="15887000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -231,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1765249167571</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feat(train-station): 实现车次站点修改功能&#10;&#10;- 在控制器中添加 PUT 接口用于更新车次站点信息&#10;- 实现服务层更新车次站点的业务逻辑&#10;- 使用 MyBatis 注解配置更新 SQL 语句&#10;- 扩展接口参数支持接收站点名称、省份、城市等字段&#10;- 完善数据校验与错误处理机制">
+      <created>1765264571170</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1765264571170</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -264,7 +272,8 @@
     <MESSAGE value="feat(config): 添加Nacos配置和MyBatis设置&#10;&#10;- 配置Spring Cloud应用名称为service-inventory&#10;- 设置Nacos配置服务器地址&#10;- 导入多个Nacos配置文件&#10;- 配置MyBatis的mapper位置和实体类别名&#10;- 启用下划线到驼峰命名转换&#10;- 设置Nacos客户端调试日志级别&#10;- 启用应用调试模式" />
     <MESSAGE value="feat(train): 添加列车实体维护字段&#10;&#10;- 新增维护时间字段 maintenance_time&#10;- 添加备注字段 note&#10;- 添加服役年限字段 fuyi_time，类型为 BigDecimal&#10;- 导入 java.math.BigDecimal 包以支持新字段类型" />
     <MESSAGE value="feat(train-station): 实现车次站点管理功能&#10;&#10;- 新增管理员车次站点控制器，提供查询和添加接口&#10;- 实现车次站点服务接口及其实现类&#10;- 配置MyBatis注解映射SQL语句&#10;- 扩展TrainStationEntity实体类字段，包括状态、地址、备注和创建时间&#10;- 完善前后端交互的数据封装与错误处理逻辑" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(train-station): 实现车次站点管理功能&#10;&#10;- 新增管理员车次站点控制器，提供查询和添加接口&#10;- 实现车次站点服务接口及其实现类&#10;- 配置MyBatis注解映射SQL语句&#10;- 扩展TrainStationEntity实体类字段，包括状态、地址、备注和创建时间&#10;- 完善前后端交互的数据封装与错误处理逻辑" />
+    <MESSAGE value="feat(train-station): 实现车次站点修改功能&#10;&#10;- 在控制器中添加 PUT 接口用于更新车次站点信息&#10;- 实现服务层更新车次站点的业务逻辑&#10;- 使用 MyBatis 注解配置更新 SQL 语句&#10;- 扩展接口参数支持接收站点名称、省份、城市等字段&#10;- 完善数据校验与错误处理机制" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(train-station): 实现车次站点修改功能&#10;&#10;- 在控制器中添加 PUT 接口用于更新车次站点信息&#10;- 实现服务层更新车次站点的业务逻辑&#10;- 使用 MyBatis 注解配置更新 SQL 语句&#10;- 扩展接口参数支持接收站点名称、省份、城市等字段&#10;- 完善数据校验与错误处理机制" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -291,13 +300,13 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java</url>
-          <line>46</line>
-          <option name="timeStamp" value="43" />
+          <line>58</line>
+          <option name="timeStamp" value="47" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="45" />
+          <line>71</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(config): 添加Nacos配置和MyBatis设置&#10;&#10;- 配置Spring Cloud应用名称为service-inventory&#10;- 设置Nacos配置服务器地址&#10;- 导入多个Nacos配置文件&#10;- 配置MyBatis的mapper位置和实体类别名&#10;- 启用下划线到驼峰命名转换&#10;- 设置Nacos客户端调试日志级别&#10;- 启用应用调试模式">
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 添加列车实体维护字段&#10;&#10;- 新增维护时间字段 maintenance_time&#10;- 添加备注字段 note&#10;- 添加服役年限字段 fuyi_time，类型为 BigDecimal&#10;- 导入 java.math.BigDecimal 包以支持新字段类型">
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainStationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/IAdminTrainStationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainStationImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/TrainEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/TrainEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/TrainStationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/TrainStationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainEntity.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +69,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "spring.configuration.checksum": "28bf093e9cd3aa79b1c68519f5610452",
+    "spring.configuration.checksum": "fe11e540ef95f7cb60474f9b7ffea36c",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -137,7 +142,8 @@
       <workItem from="1764205149404" duration="2519000" />
       <workItem from="1764321218077" duration="2511000" />
       <workItem from="1764555454611" duration="15339000" />
-      <workItem from="1765155410994" duration="17066000" />
+      <workItem from="1765155410994" duration="18986000" />
+      <workItem from="1765243167830" duration="4882000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -209,7 +215,14 @@
       <option name="project" value="LOCAL" />
       <updated>1765181063804</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feat(train): 添加列车实体维护字段&#10;&#10;- 新增维护时间字段 maintenance_time&#10;- 添加备注字段 note&#10;- 添加服役年限字段 fuyi_time，类型为 BigDecimal&#10;- 导入 java.math.BigDecimal 包以支持新字段类型">
+      <created>1765182642131</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1765182642131</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -240,7 +253,8 @@
     <MESSAGE value="feat(user): 重构用户登录逻辑并支持权限跳转&#10;&#10;- 修改 IUserService 接口，将 login 方法参数改为用户名和密码，返回 UserEntity 对象&#10;- 更新 UserController 使用 @Controller 注解，并根据用户权限码跳转不同页面&#10;- 调整 UserMapper 的 login 方法，通过注解实现 SQL 查询并返回完整用户信息&#10;- UserServiceImpl 中重新实现 login 逻辑，直接返回查询结果供控制器判断权限&#10;- 引入 HttpSession 用于存储登录用户信息&#10;- 修复断点位置因代码结构调整后产生的行号偏移问题" />
     <MESSAGE value="feat(inventory): 初始化库存服务模块&#10;&#10;- 新增管理员火车控制器，用于查询车辆详情&#10;- 实现管理员火车服务接口及其实现类&#10;- 配置MyBatis映射文件位置和类型别名包&#10;- 启用服务注册与发现功能&#10;- 添加Nacos配置中心和服务发现配置&#10;- 更新项目编码配置，确保统一使用UTF-8&#10;- 调整编译器设置，加入新模块的编译参数&#10;- 删除旧版本依赖库配置信息&#10;- 增加跨域访问支持注释说明&#10;- 初始化应用启动类并扫描Mapper组件" />
     <MESSAGE value="feat(config): 添加Nacos配置和MyBatis设置&#10;&#10;- 配置Spring Cloud应用名称为service-inventory&#10;- 设置Nacos配置服务器地址&#10;- 导入多个Nacos配置文件&#10;- 配置MyBatis的mapper位置和实体类别名&#10;- 启用下划线到驼峰命名转换&#10;- 设置Nacos客户端调试日志级别&#10;- 启用应用调试模式" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(config): 添加Nacos配置和MyBatis设置&#10;&#10;- 配置Spring Cloud应用名称为service-inventory&#10;- 设置Nacos配置服务器地址&#10;- 导入多个Nacos配置文件&#10;- 配置MyBatis的mapper位置和实体类别名&#10;- 启用下划线到驼峰命名转换&#10;- 设置Nacos客户端调试日志级别&#10;- 启用应用调试模式" />
+    <MESSAGE value="feat(train): 添加列车实体维护字段&#10;&#10;- 新增维护时间字段 maintenance_time&#10;- 添加备注字段 note&#10;- 添加服役年限字段 fuyi_time，类型为 BigDecimal&#10;- 导入 java.math.BigDecimal 包以支持新字段类型" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(train): 添加列车实体维护字段&#10;&#10;- 新增维护时间字段 maintenance_time&#10;- 添加备注字段 note&#10;- 添加服役年限字段 fuyi_time，类型为 BigDecimal&#10;- 导入 java.math.BigDecimal 包以支持新字段类型" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -269,6 +283,11 @@
           <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainController.java</url>
           <line>27</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java</url>
+          <line>24</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

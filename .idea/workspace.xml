@@ -4,14 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 添加列车实体维护字段&#10;&#10;- 新增维护时间字段 maintenance_time&#10;- 添加备注字段 note&#10;- 添加服役年限字段 fuyi_time，类型为 BigDecimal&#10;- 导入 java.math.BigDecimal 包以支持新字段类型">
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainStationMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/IAdminTrainStationService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainStationImpl.java" afterDir="false" />
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train-station): 实现车次站点管理功能&#10;&#10;- 新增管理员车次站点控制器，提供查询和添加接口&#10;- 实现车次站点服务接口及其实现类&#10;- 配置MyBatis注解映射SQL语句&#10;- 扩展TrainStationEntity实体类字段，包括状态、地址、备注和创建时间&#10;- 完善前后端交互的数据封装与错误处理逻辑">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/TrainStationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/TrainStationEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainStationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainStationMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/IAdminTrainStationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/IAdminTrainStationService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainStationImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainStationImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/controller/AdminTrainStationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/controller/AdminTrainStationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainStationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainStationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/IAdminTrainStationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/IAdminTrainStationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainStationImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainStationImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -143,7 +145,7 @@
       <workItem from="1764321218077" duration="2511000" />
       <workItem from="1764555454611" duration="15339000" />
       <workItem from="1765155410994" duration="18986000" />
-      <workItem from="1765243167830" duration="4882000" />
+      <workItem from="1765243167830" duration="13418000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -222,7 +224,14 @@
       <option name="project" value="LOCAL" />
       <updated>1765182642131</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feat(train-station): 实现车次站点管理功能&#10;&#10;- 新增管理员车次站点控制器，提供查询和添加接口&#10;- 实现车次站点服务接口及其实现类&#10;- 配置MyBatis注解映射SQL语句&#10;- 扩展TrainStationEntity实体类字段，包括状态、地址、备注和创建时间&#10;- 完善前后端交互的数据封装与错误处理逻辑">
+      <created>1765249167571</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1765249167571</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -254,7 +263,8 @@
     <MESSAGE value="feat(inventory): 初始化库存服务模块&#10;&#10;- 新增管理员火车控制器，用于查询车辆详情&#10;- 实现管理员火车服务接口及其实现类&#10;- 配置MyBatis映射文件位置和类型别名包&#10;- 启用服务注册与发现功能&#10;- 添加Nacos配置中心和服务发现配置&#10;- 更新项目编码配置，确保统一使用UTF-8&#10;- 调整编译器设置，加入新模块的编译参数&#10;- 删除旧版本依赖库配置信息&#10;- 增加跨域访问支持注释说明&#10;- 初始化应用启动类并扫描Mapper组件" />
     <MESSAGE value="feat(config): 添加Nacos配置和MyBatis设置&#10;&#10;- 配置Spring Cloud应用名称为service-inventory&#10;- 设置Nacos配置服务器地址&#10;- 导入多个Nacos配置文件&#10;- 配置MyBatis的mapper位置和实体类别名&#10;- 启用下划线到驼峰命名转换&#10;- 设置Nacos客户端调试日志级别&#10;- 启用应用调试模式" />
     <MESSAGE value="feat(train): 添加列车实体维护字段&#10;&#10;- 新增维护时间字段 maintenance_time&#10;- 添加备注字段 note&#10;- 添加服役年限字段 fuyi_time，类型为 BigDecimal&#10;- 导入 java.math.BigDecimal 包以支持新字段类型" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(train): 添加列车实体维护字段&#10;&#10;- 新增维护时间字段 maintenance_time&#10;- 添加备注字段 note&#10;- 添加服役年限字段 fuyi_time，类型为 BigDecimal&#10;- 导入 java.math.BigDecimal 包以支持新字段类型" />
+    <MESSAGE value="feat(train-station): 实现车次站点管理功能&#10;&#10;- 新增管理员车次站点控制器，提供查询和添加接口&#10;- 实现车次站点服务接口及其实现类&#10;- 配置MyBatis注解映射SQL语句&#10;- 扩展TrainStationEntity实体类字段，包括状态、地址、备注和创建时间&#10;- 完善前后端交互的数据封装与错误处理逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(train-station): 实现车次站点管理功能&#10;&#10;- 新增管理员车次站点控制器，提供查询和添加接口&#10;- 实现车次站点服务接口及其实现类&#10;- 配置MyBatis注解映射SQL语句&#10;- 扩展TrainStationEntity实体类字段，包括状态、地址、备注和创建时间&#10;- 完善前后端交互的数据封装与错误处理逻辑" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -275,19 +285,19 @@
           <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainController.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainController.java</url>
-          <line>27</line>
-          <option name="timeStamp" value="11" />
+          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainStationImpl.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="13" />
+          <line>46</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java</url>
+          <line>45</line>
+          <option name="timeStamp" value="45" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

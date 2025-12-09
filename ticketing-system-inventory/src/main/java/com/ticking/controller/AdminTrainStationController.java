@@ -4,12 +4,12 @@ import com.ticking.entity.RestUtil;
 import com.ticking.entity.TrainStationEntity;
 import com.ticking.service.IAdminTrainStationService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Map;
 
 @Controller
 public class AdminTrainStationController {
@@ -35,6 +35,19 @@ public class AdminTrainStationController {
             return RestUtil.success();
         }else {
             return RestUtil.error("添加失败");
+        }
+    }
+
+    /**
+     * 修改车次站点
+     */
+    @PutMapping("/admin/trainStation/update/{id}")
+    public @ResponseBody RestUtil updateTrainStation(@PathVariable Long id, @RequestBody Map<String,Object> trainStation) {
+        Boolean result=adminTrainStationService.updateTrainStation(id,trainStation);
+        if (result==true){
+            return RestUtil.success();
+        }else {
+            return RestUtil.error("修改失败");
         }
     }
 }

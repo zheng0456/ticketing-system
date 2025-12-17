@@ -5,10 +5,7 @@ import com.ticking.entity.TrainEntity;
 import com.ticking.service.IAdminTrainService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Map;
@@ -27,5 +24,18 @@ public class AdminTrainController {
     public @ResponseBody RestUtil queryTrain() {
         List<TrainEntity> data=adminTrainService.selectTrainMessages();
         return RestUtil.success(data);
+    }
+
+    /**
+     * 添加车辆
+     */
+    @PostMapping("/admin/train/add")
+    public @ResponseBody RestUtil addTrain(@RequestBody Map<String,Object>  train) {
+        Boolean result=adminTrainService.addTrain(train);
+        if (result==true){
+            return RestUtil.success();
+        }else {
+            return RestUtil.error("添加失败");
+        }
     }
 }

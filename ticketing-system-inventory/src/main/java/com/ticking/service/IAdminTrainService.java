@@ -7,4 +7,6 @@ import java.util.Map;
 
 public interface IAdminTrainService {
     List<TrainEntity> selectTrainMessages();
+
+    Boolean addTrain(Map<String, Object> train);
 }

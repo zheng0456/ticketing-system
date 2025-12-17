@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 public class TrainStationEntity {
     private Long id;            // 站点唯一标识
-    private String stationName; // 站点名称（如"北京西站"）
+    private String stationName; // 站点名称（如"北京"）
     private String province;    // 所属省份
     private String city;        // 所属城市
     private Integer status;  // 拼音缩写（如"BXP"）

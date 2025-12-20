@@ -14,7 +14,7 @@ public interface AdminTrainMapper {
     /**
      * 查询车次信息
      */
-    @Select("SELECT * FROM train where operate_status = 1 or operate_status = 2 or operate_status = 0")
+    @Select("SELECT * FROM train")
     List<TrainEntity> selectAllTrain();
 
     /**
@@ -30,8 +30,14 @@ public interface AdminTrainMapper {
     int addTrainCarriage(Long trainId,Long id, int rangeInt, String name, int i);
 
     /**
-     * 添加座位信息  普通列车 和 动车
+     * 添加座位信息
      */
     @Insert("insert into train_seat(carriage_id,seat_no,seat_status) values(#{id},#{i},0)")
     int addTrainSeat(Long id, String i);
+
+    /**
+     * 查询车次始发站名称信息 和 终点站名称信息
+     */
+    @Select("SELECT station_name FROM train_station WHERE id=#{id}")
+    String selectTrainStationByTrainId(Long startStationId);
 }

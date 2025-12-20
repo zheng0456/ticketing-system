@@ -3,6 +3,7 @@ package com.ticking.service.impl;
 import com.ticking.entity.TrainCarriageEntity;
 import com.etc.trainordersys.utils.SnowflakeIdWorker;
 import com.ticking.entity.TrainEntity;
+import com.ticking.entity.TrainStationEntity;
 import com.ticking.mapper.AdminTrainMapper;
 import com.ticking.service.IAdminTrainService;
 import com.ticking.until.TimeCalculationExample;
@@ -10,10 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import java.util.List;
-import java.util.Map;
-import java.util.Random;
-import java.util.TimerTask;
+import java.util.*;
 
 @Service("adminTrainService")
 public class AdminTrainServiceImpl implements IAdminTrainService {
@@ -25,6 +23,12 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
     @Override
     public List<TrainEntity> selectTrainMessages() {
         List<TrainEntity> trains=adminTrainMapper.selectAllTrain();
+        for (TrainEntity train:trains){
+            String startStationName=adminTrainMapper.selectTrainStationByTrainId(train.getStartStationId());
+            String endStationName=adminTrainMapper.selectTrainStationByTrainId(train.getEndStationId());
+            train.setStartStationName(startStationName);
+            train.setEndStationName(endStationName);
+        }
         return trains;
     }
 
@@ -47,6 +51,11 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
             result=addHighSpeedTrain(train);
         }
         return result;
+    }
+
+    @Override
+    public Boolean updateTrain(Long id, Map<String, Object> train) {
+        return null;
     }
 
     //添加普通列车和动车

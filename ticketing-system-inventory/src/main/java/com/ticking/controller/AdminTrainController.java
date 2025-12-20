@@ -23,6 +23,9 @@ public class AdminTrainController {
     @PostMapping("/admin/train")
     public @ResponseBody RestUtil queryTrain() {
         List<TrainEntity> data=adminTrainService.selectTrainMessages();
+        if (data==null){
+            return RestUtil.error("暂无数据");
+        }
         return RestUtil.success(data);
     }
 
@@ -36,6 +39,18 @@ public class AdminTrainController {
             return RestUtil.success();
         }else {
             return RestUtil.error("添加失败");
+        }
+    }
+    /**
+     * 修改车辆
+     */
+    @PutMapping("/admin/train/update/{id}")
+    public @ResponseBody RestUtil updateTrain(@PathVariable Long id, @RequestBody Map<String,Object> train) {
+        Boolean result=adminTrainService.updateTrain(id,train);
+        if (result==true){
+            return RestUtil.success();
+        }else {
+            return RestUtil.error("修改失败");
         }
     }
 }

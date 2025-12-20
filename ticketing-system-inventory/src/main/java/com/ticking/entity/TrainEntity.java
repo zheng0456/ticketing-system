@@ -24,8 +24,9 @@ public class TrainEntity {
     private String trainType;       // 列车类型（G-高铁、D-动车等）
     private Integer operateStatus;  // 运营状态（0-停运，1-正常，2-维修）
     private String createTime;      // 创建时间
-    private String maintenance_time;   //维护时间
+    private String maintenanceTime;   //维护时间
     private String note;  //备注
     private BigDecimal fuyiTime;   //服役年限
-    private String intermediateStations;   //中转站
+    private String startStationName;   //出发站名称
+    private String endStationName;    //到达站名称
 }

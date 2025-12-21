@@ -55,7 +55,16 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
 
     @Override
     public Boolean updateTrain(Long id, Map<String, Object> train) {
-        return null;
+        Integer status = (Integer) train.get("status");   // 状态
+        String departureTime = (String) train.get("departureTime");  // 出发时间
+        String arrivalTime = (String) train.get("arrivalTime");   // 到达时间
+        Integer startStation = (Integer) train.get("startStationId");  // 出发站
+        Integer endStation = (Integer) train.get("endStationId");  // 到达站
+        String serviceLife = (String) train.get("serviceLife");// 服役年限
+        String remark = (String) train.get("remark");   // 备注
+        String lastMaintenanceDate = (String) train.get("lastMaintenanceDate"); // 最后维护时间
+        Boolean result=adminTrainMapper.updateTrain(id,departureTime, arrivalTime, startStation, endStation, status, Double.valueOf(serviceLife), remark, lastMaintenanceDate);
+        return result;
     }
 
     //添加普通列车和动车

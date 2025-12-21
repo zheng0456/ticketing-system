@@ -5,6 +5,7 @@ import com.ticking.entity.TrainEntity;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -40,4 +41,10 @@ public interface AdminTrainMapper {
      */
     @Select("SELECT station_name FROM train_station WHERE id=#{id}")
     String selectTrainStationByTrainId(Long startStationId);
+
+    /**
+     * 修改车次信息
+     */
+    @Update("update train set start_station_id=#{startStation},end_station_id=#{endStation},start_time=#{departureTime},end_time=#{arrivalTime},operate_status=#{status},maintenance_time=#{lastMaintenanceDate},note=#{remark},fuyi_time=#{valueOf} where id=#{id}")
+    Boolean updateTrain(Long id, String departureTime, String arrivalTime, Integer startStation, Integer endStation, Integer status, Double valueOf, String remark, String lastMaintenanceDate);
 }

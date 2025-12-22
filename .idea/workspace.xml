@@ -4,59 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 实现车次信息修改功能&#10;&#10;- 在 AdminTrainMapper 中添加 updateTrain 方法及对应 SQL 注解&#10;- 实现服务层 updateTrain 逻辑，解析并传递车次信息参数&#10;- 为 TrainEntity 添加 Jackson 序列化注解支持 Long 类型序列化&#10;- 补充相关导入语句与方法注释&#10;- 更新工作区配置与断点信息">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/target/classes/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/target/classes/com/ticking/GateWayApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/target/classes/com/ticking/config/CorsConfig.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/IAdminTrainService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/IAdminTrainService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/etc/trainordersys/utils/SnowflakeIdWorker.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/InventoryApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/controller/AdminTrainController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/controller/AdminTrainStationController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/RestUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainCarriageEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainPassStationEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainSeatEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainStationEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainStationMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/IAdminTrainService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/IAdminTrainStationService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainServiceImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainStationImpl.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/until/TimeCalculationExample.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/application.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/UserApplication.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/controller/UserController.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/MenuEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/RestUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/RoleEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/RoleMenuEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/StudentDiscountEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainCarriageEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainPassStationEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainSeatEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainStationEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainTicketEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/UserEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/UserRoleEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewOrderEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewOrderItemEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewRefundEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewScenicEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewTicketStockEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewTicketTypeEntity.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/mapper/UserMapper.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/IUserService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/impl/UserServiceImpl.class" beforeDir="false" />
-    </list>
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 实现车次信息删除功能&#10;&#10;- 在控制器中添加 POST 接口用于批量删除车次信息&#10;- 实现服务层删除逻辑，包括车次、车厢及座位信息的级联删除&#10;- 在 Mapper 层添加对应的删除 SQL 注解方法&#10;- 补充删除相关的方法注释与参数校验&#10;- 更新工作区配置与断点信息" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -205,7 +153,7 @@
       <workItem from="1766047788941" duration="17731000" />
       <workItem from="1766128629000" duration="6000" />
       <workItem from="1766191935811" duration="14663000" />
-      <workItem from="1766364787437" duration="841000" />
+      <workItem from="1766364787437" duration="1388000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -347,7 +295,14 @@
       <option name="project" value="LOCAL" />
       <updated>1766310158643</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="feat(train): 实现车次信息删除功能&#10;&#10;- 在控制器中添加 POST 接口用于批量删除车次信息&#10;- 实现服务层删除逻辑，包括车次、车厢及座位信息的级联删除&#10;- 在 Mapper 层添加对应的删除 SQL 注解方法&#10;- 补充删除相关的方法注释与参数校验&#10;- 更新工作区配置与断点信息">
+      <created>1766366508486</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1766366508486</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -387,7 +342,8 @@
     <MESSAGE value="feat(train): 实现车次信息添加功能&#10;&#10;- 在控制器中添加 POST 接口用于新增车次信息&#10;- 实现服务层添加车次及车厢座位的业务逻辑&#10;- 使用 MyBatis 注解配置插入 SQL 语句&#10;- 支持普通列车和高铁的不同车厢座位配置&#10;- 添加随机数生成车厢编号的逻辑&#10;- 完善数据校验与错误处理机制&#10;- 引入雪花算法生成唯一 ID&#10;- 优化座位添加逻辑并支持多种座位类型&#10;- 添加事务管理确保数据一致性&#10;- 更新时间计算工具类并增强代码可读性" />
     <MESSAGE value="feat(train): 实现车次信息查询与修改功能&#10;&#10;- 在控制器中增加空数据判断，避免返回无效列表&#10;- 添加 PUT 接口用于修改车次信息&#10;- 优化 Mapper 层 SQL 查询语句，移除运营状态限制&#10;- 增加根据站点 ID 查询始发站和终点站名称的功能&#10;- 在实体类中新增出发站和到达站名称字段&#10;- 完善服务层查询逻辑，自动填充车站名称信息&#10;- 更新服务接口与实现类，支持车次信息更新操作" />
     <MESSAGE value="feat(train): 实现车次信息修改功能&#10;&#10;- 在 AdminTrainMapper 中添加 updateTrain 方法及对应 SQL 注解&#10;- 实现服务层 updateTrain 逻辑，解析并传递车次信息参数&#10;- 为 TrainEntity 添加 Jackson 序列化注解支持 Long 类型序列化&#10;- 补充相关导入语句与方法注释&#10;- 更新工作区配置与断点信息" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(train): 实现车次信息修改功能&#10;&#10;- 在 AdminTrainMapper 中添加 updateTrain 方法及对应 SQL 注解&#10;- 实现服务层 updateTrain 逻辑，解析并传递车次信息参数&#10;- 为 TrainEntity 添加 Jackson 序列化注解支持 Long 类型序列化&#10;- 补充相关导入语句与方法注释&#10;- 更新工作区配置与断点信息" />
+    <MESSAGE value="feat(train): 实现车次信息删除功能&#10;&#10;- 在控制器中添加 POST 接口用于批量删除车次信息&#10;- 实现服务层删除逻辑，包括车次、车厢及座位信息的级联删除&#10;- 在 Mapper 层添加对应的删除 SQL 注解方法&#10;- 补充删除相关的方法注释与参数校验&#10;- 更新工作区配置与断点信息" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(train): 实现车次信息删除功能&#10;&#10;- 在控制器中添加 POST 接口用于批量删除车次信息&#10;- 实现服务层删除逻辑，包括车次、车厢及座位信息的级联删除&#10;- 在 Mapper 层添加对应的删除 SQL 注解方法&#10;- 补充删除相关的方法注释与参数校验&#10;- 更新工作区配置与断点信息" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

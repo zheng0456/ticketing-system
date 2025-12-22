@@ -53,4 +53,19 @@ public class AdminTrainController {
             return RestUtil.error("修改失败");
         }
     }
+    /**
+     * 删除车辆
+     */
+    @PostMapping("/admin/train/deletes")
+    public @ResponseBody RestUtil deleteTrain(@RequestBody Long [] id) {
+        Boolean result=false;
+        for (Long i:id){
+            result=adminTrainService.deleteTrain(i);
+        }
+        if (result==true){
+            return RestUtil.success();
+        }else {
+            return RestUtil.error("删除失败");
+        }
+    }
 }

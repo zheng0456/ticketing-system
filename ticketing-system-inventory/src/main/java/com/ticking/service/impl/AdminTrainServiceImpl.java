@@ -66,6 +66,18 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
         Boolean result=adminTrainMapper.updateTrain(id,departureTime, arrivalTime, startStation, endStation, status, Double.valueOf(serviceLife), remark, lastMaintenanceDate);
         return result;
     }
+    @Override
+    public Boolean deleteTrain(Long id) {
+        Boolean result=adminTrainMapper.deleteTrain(id);
+        if (result){
+            List<Long> carriageIDs=adminTrainMapper.selectTrainCarriagesID(id);
+            for (Long carriageID:carriageIDs){
+                adminTrainMapper.deleteTrainSeats(carriageID);
+            }
+            result=adminTrainMapper.deleteTrainCarriages(id);
+        }
+        return result;
+    }
 
     //添加普通列车和动车
     private Boolean addCommonTrain(Map<String, Object> train) {

@@ -2,10 +2,7 @@ package com.ticking.mapper;
 
 import com.ticking.entity.TrainCarriageEntity;
 import com.ticking.entity.TrainEntity;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.math.BigDecimal;
 import java.util.List;
@@ -47,4 +44,28 @@ public interface AdminTrainMapper {
      */
     @Update("update train set start_station_id=#{startStation},end_station_id=#{endStation},start_time=#{departureTime},end_time=#{arrivalTime},operate_status=#{status},maintenance_time=#{lastMaintenanceDate},note=#{remark},fuyi_time=#{valueOf} where id=#{id}")
     Boolean updateTrain(Long id, String departureTime, String arrivalTime, Integer startStation, Integer endStation, Integer status, Double valueOf, String remark, String lastMaintenanceDate);
+
+    /**
+     * 删除车次信息
+     */
+    @Delete("delete from train where id=#{id}")
+    Boolean deleteTrain(Long id);
+
+    /**
+     * 删除车厢信息
+     */
+    @Delete("delete from train_carriage where train_id= #{id}")
+    Boolean deleteTrainCarriages(Long id);
+
+    /**
+     * 查询座位信息
+     */
+    @Select("SELECT id FROM train_carriage WHERE train_id= #{id}")
+    List<Long> selectTrainCarriagesID(Long id);
+
+    /**
+     * 删除座位信息
+     */
+    @Delete("delete from train_seat where carriage_id= #{carriageID}")
+    Boolean deleteTrainSeats(Long carriageID);
 }

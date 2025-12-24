@@ -1,10 +1,7 @@
 package com.ticking.mapper;
 
 import com.ticking.entity.TrainPassStationEntity;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -25,4 +22,10 @@ public interface AdminTrainPassStationMapper {
      */
     @Update("update train_pass_station set train_id=#{valueOf},station_id=#{valueOf1},pass_order=#{passStationOrder},depart_time=#{departureTime},arrive_time=#{arrivalTime},stay_duration=#{time} where id=#{id}")
     Boolean updateTrainPassStation(Long valueOf, Long valueOf1, String passStationOrder, String departureTime, String arrivalTime, String time,Long  id);
+
+    /**
+     * 删除途径站点
+     */
+    @Delete("delete from train_pass_station where id= #{id}")
+    Boolean deleteTrainPassStation(Long i);
 }

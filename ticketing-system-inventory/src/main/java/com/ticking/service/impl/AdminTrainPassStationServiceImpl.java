@@ -65,4 +65,13 @@ public class AdminTrainPassStationServiceImpl implements IAdminTrainPassStationS
         Boolean result=adminTrainPassStationMapper.updateTrainPassStation(Long.valueOf(trainId), Long.valueOf(stationId),passStationOrder,departureTime,arrivalTime,time, Long.valueOf(passStationId));
         return result;
     }
+
+    /**
+     *  删除接口
+     */
+    @Override
+    public Boolean deleteTrainPassStation(Long i) {
+        Boolean result= adminTrainPassStationMapper.deleteTrainPassStation(i);
+        return result;
+    }
 }

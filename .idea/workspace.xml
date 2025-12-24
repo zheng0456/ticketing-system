@@ -4,12 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 实现列车途径站点管理功能&#10;&#10;- 新增AdminTrainPassStationController控制器，提供查询和添加途径站点的接口&#10;- 新增AdminTrainPassStationMapper数据访问层，实现途径站点的数据库操作&#10;- 新增AdminTrainPassStationService服务层接口及实现类&#10;- 在TrainPassStationEntity实体类中添加车次编号和站点名称字段&#10;- 修改AdminTrainMapper和AdminTrainStationMapper添加查询车次编号和站点名称的方法&#10;- 调整到达时间和离站时间字段类型为String格式&#10;- 实现在查询途径站点时自动关联车次编号和站点名称">
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 实现列车途径站点修改功能&#10;&#10;- 在AdminTrainPassStationController中添加updateTrainPassStation接口&#10;- 在AdminTrainPassStationMapper中添加@Update注解实现数据库更新操作&#10;- 在AdminTrainPassStationService中实现updateTrainPassStation业务逻辑&#10;- 使用TimeCalculationExample计算停留时间并更新途径站点信息&#10;- 完善相关方法注释和参数处理逻辑">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainPassStationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainPassStationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainPassStationMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainPassStationMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/IAdminTrainPassStationService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/IAdminTrainPassStationService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainPassStationServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainPassStationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/controller/AdminTrainPassStationController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/controller/AdminTrainPassStationController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainPassStationMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainPassStationMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/IAdminTrainPassStationService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/IAdminTrainPassStationService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainPassStationServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainPassStationServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -163,7 +167,7 @@
       <workItem from="1766398463529" duration="2954000" />
       <workItem from="1766459361687" duration="6000" />
       <workItem from="1766460222092" duration="544000" />
-      <workItem from="1766561265535" duration="6529000" />
+      <workItem from="1766561265535" duration="8049000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -319,7 +323,14 @@
       <option name="project" value="LOCAL" />
       <updated>1766567554558</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="feat(train): 实现列车途径站点修改功能&#10;&#10;- 在AdminTrainPassStationController中添加updateTrainPassStation接口&#10;- 在AdminTrainPassStationMapper中添加@Update注解实现数据库更新操作&#10;- 在AdminTrainPassStationService中实现updateTrainPassStation业务逻辑&#10;- 使用TimeCalculationExample计算停留时间并更新途径站点信息&#10;- 完善相关方法注释和参数处理逻辑">
+      <created>1766568323395</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1766568323395</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -361,7 +372,8 @@
     <MESSAGE value="feat(train): 实现车次信息修改功能&#10;&#10;- 在 AdminTrainMapper 中添加 updateTrain 方法及对应 SQL 注解&#10;- 实现服务层 updateTrain 逻辑，解析并传递车次信息参数&#10;- 为 TrainEntity 添加 Jackson 序列化注解支持 Long 类型序列化&#10;- 补充相关导入语句与方法注释&#10;- 更新工作区配置与断点信息" />
     <MESSAGE value="feat(train): 实现车次信息删除功能&#10;&#10;- 在控制器中添加 POST 接口用于批量删除车次信息&#10;- 实现服务层删除逻辑，包括车次、车厢及座位信息的级联删除&#10;- 在 Mapper 层添加对应的删除 SQL 注解方法&#10;- 补充删除相关的方法注释与参数校验&#10;- 更新工作区配置与断点信息" />
     <MESSAGE value="feat(train): 实现列车途径站点管理功能&#10;&#10;- 新增AdminTrainPassStationController控制器，提供查询和添加途径站点的接口&#10;- 新增AdminTrainPassStationMapper数据访问层，实现途径站点的数据库操作&#10;- 新增AdminTrainPassStationService服务层接口及实现类&#10;- 在TrainPassStationEntity实体类中添加车次编号和站点名称字段&#10;- 修改AdminTrainMapper和AdminTrainStationMapper添加查询车次编号和站点名称的方法&#10;- 调整到达时间和离站时间字段类型为String格式&#10;- 实现在查询途径站点时自动关联车次编号和站点名称" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(train): 实现列车途径站点管理功能&#10;&#10;- 新增AdminTrainPassStationController控制器，提供查询和添加途径站点的接口&#10;- 新增AdminTrainPassStationMapper数据访问层，实现途径站点的数据库操作&#10;- 新增AdminTrainPassStationService服务层接口及实现类&#10;- 在TrainPassStationEntity实体类中添加车次编号和站点名称字段&#10;- 修改AdminTrainMapper和AdminTrainStationMapper添加查询车次编号和站点名称的方法&#10;- 调整到达时间和离站时间字段类型为String格式&#10;- 实现在查询途径站点时自动关联车次编号和站点名称" />
+    <MESSAGE value="feat(train): 实现列车途径站点修改功能&#10;&#10;- 在AdminTrainPassStationController中添加updateTrainPassStation接口&#10;- 在AdminTrainPassStationMapper中添加@Update注解实现数据库更新操作&#10;- 在AdminTrainPassStationService中实现updateTrainPassStation业务逻辑&#10;- 使用TimeCalculationExample计算停留时间并更新途径站点信息&#10;- 完善相关方法注释和参数处理逻辑" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(train): 实现列车途径站点修改功能&#10;&#10;- 在AdminTrainPassStationController中添加updateTrainPassStation接口&#10;- 在AdminTrainPassStationMapper中添加@Update注解实现数据库更新操作&#10;- 在AdminTrainPassStationService中实现updateTrainPassStation业务逻辑&#10;- 使用TimeCalculationExample计算停留时间并更新途径站点信息&#10;- 完善相关方法注释和参数处理逻辑" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -407,14 +419,9 @@
           <option name="timeStamp" value="66" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainPassStationServiceImpl.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="71" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainPassStationServiceImpl.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="72" />
+          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainPassStationController.java</url>
+          <line>55</line>
+          <option name="timeStamp" value="73" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

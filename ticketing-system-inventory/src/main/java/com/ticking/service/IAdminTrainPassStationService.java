@@ -11,4 +11,6 @@ public interface IAdminTrainPassStationService {
     List<TrainPassStationEntity> selectAllTrainPassStation();
 
     Boolean updateTrainPassStation(Map<String, Object> trainPassStation);
+
+    Boolean deleteTrainPassStation(Long i);
 }

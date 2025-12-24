@@ -46,4 +46,19 @@ public class AdminTrainPassStationController {
         }
         return RestUtil.success();
     }
+    /**
+     * 删除途径车站站点
+     */
+    @PostMapping("/admin/trainPassStation/delete")
+    public @ResponseBody RestUtil deleteTrainPassStation(@RequestBody Long [] id) {
+        Boolean result=false;
+        for (Long i:id){
+            result=adminTrainPassStationService.deleteTrainPassStation(i);
+        }
+        if (result==true){
+            return RestUtil.success();
+        }else {
+            return RestUtil.error("删除失败");
+        }
+    }
 }

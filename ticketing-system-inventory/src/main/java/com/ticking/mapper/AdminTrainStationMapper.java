@@ -19,4 +19,7 @@ public interface AdminTrainStationMapper {
 
     @Delete("delete from train_station where id=#{id}")
     Boolean deleteTrainStation(Long id);
+
+    @Select("SELECT station_name FROM train_station WHERE id= #{stationId}")
+    String selectStationName(Long stationId);
 }

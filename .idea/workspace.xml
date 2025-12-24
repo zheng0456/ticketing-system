@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 实现车次信息删除功能&#10;&#10;- 在控制器中添加 POST 接口用于批量删除车次信息&#10;- 实现服务层删除逻辑，包括车次、车厢及座位信息的级联删除&#10;- 在 Mapper 层添加对应的删除 SQL 注解方法&#10;- 补充删除相关的方法注释与参数校验&#10;- 更新工作区配置与断点信息" />
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 实现车次信息删除功能&#10;&#10;- 在控制器中添加 POST 接口用于批量删除车次信息&#10;- 实现服务层删除逻辑，包括车次、车厢及座位信息的级联删除&#10;- 在 Mapper 层添加对应的删除 SQL 注解方法&#10;- 补充删除相关的方法注释与参数校验&#10;- 更新工作区配置与断点信息">
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainPassStationController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainPassStationMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/IAdminTrainPassStationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainPassStationServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/TrainPassStationEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/TrainPassStationEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainPassStationEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainPassStationEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainMapper.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,8 +23,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -153,7 +163,11 @@
       <workItem from="1766047788941" duration="17731000" />
       <workItem from="1766128629000" duration="6000" />
       <workItem from="1766191935811" duration="14663000" />
-      <workItem from="1766364787437" duration="1388000" />
+      <workItem from="1766364787437" duration="3954000" />
+      <workItem from="1766398463529" duration="2954000" />
+      <workItem from="1766459361687" duration="6000" />
+      <workItem from="1766460222092" duration="544000" />
+      <workItem from="1766561265535" duration="5774000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -387,6 +401,16 @@
           <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainController.java</url>
           <line>62</line>
           <option name="timeStamp" value="66" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainPassStationServiceImpl.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="71" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainPassStationServiceImpl.java</url>
+          <line>40</line>
+          <option name="timeStamp" value="72" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

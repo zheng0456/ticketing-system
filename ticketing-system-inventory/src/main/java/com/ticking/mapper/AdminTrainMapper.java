@@ -68,4 +68,10 @@ public interface AdminTrainMapper {
      */
     @Delete("delete from train_seat where carriage_id= #{carriageID}")
     Boolean deleteTrainSeats(Long carriageID);
+
+    /**
+     * 查询车次编号
+     */
+    @Select("SELECT train_no FROM train WHERE id= #{trainId}")
+    String selectTrainNumber(Long trainId);
 }

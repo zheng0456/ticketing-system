@@ -17,7 +17,9 @@ public class TrainPassStationEntity {
     private Long trainId;         // 车次ID
     private Long stationId;       // 途经站点ID
     private Integer passOrder;    // 途经顺序（1-出发站、2-第一途经站）
-    private Date arriveTime;      // 到站时间
-    private Date departTime;      // 离站时间
+    private String arriveTime;      // 到站时间
+    private String departTime;      // 离站时间
     private String stayDuration;  // 停留时长（如"2分"）
+    private String trainNumber;   // 车次编号
+    private String stationName;  // 站点名称
 }

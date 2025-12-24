@@ -9,4 +9,6 @@ public interface IAdminTrainPassStationService {
     Boolean addTrainPassStation(Map<String, Object> trainPassStation);
 
     List<TrainPassStationEntity> selectAllTrainPassStation();
+
+    Boolean updateTrainPassStation(Map<String, Object> trainPassStation);
 }

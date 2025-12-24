@@ -35,4 +35,15 @@ public class AdminTrainPassStationController {
         }
         return RestUtil.success();
     }
+    /**
+     * 修改途径车站站点
+     */
+    @PostMapping("/admin/trainPassStation/update")
+    public @ResponseBody RestUtil updateTrainPassStation(@RequestBody Map<String,Object> trainPassStation) {
+        Boolean result= adminTrainPassStationService.updateTrainPassStation(trainPassStation);
+        if (result==false){
+            return RestUtil.error("修改失败");
+        }
+        return RestUtil.success();
+    }
 }

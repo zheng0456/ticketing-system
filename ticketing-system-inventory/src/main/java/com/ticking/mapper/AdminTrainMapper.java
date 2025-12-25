@@ -74,4 +74,16 @@ public interface AdminTrainMapper {
      */
     @Select("SELECT train_no FROM train WHERE id= #{trainId}")
     String selectTrainNumber(Long trainId);
+
+    /**
+     * 查询车次信息 根据 火车id 查询车次信息
+     */
+    @Select("SELECT * FROM train WHERE id= #{trainId}")
+    TrainEntity selectTrain(Long trainId);
+
+    /**
+     * 查询车厢信息 根据 火车id 获取车厢信息
+     */
+    @Select("SELECT DISTINCT * FROM train_carriage WHERE train_id= #{trainId}")
+    List<TrainCarriageEntity> selectTrainCarriage(Long trainId);
 }

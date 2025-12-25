@@ -5,6 +5,7 @@ import com.etc.trainordersys.utils.SnowflakeIdWorker;
 import com.ticking.entity.TrainEntity;
 import com.ticking.entity.TrainStationEntity;
 import com.ticking.mapper.AdminTrainMapper;
+import com.ticking.mapper.TicketMapper;
 import com.ticking.service.IAdminTrainService;
 import com.ticking.until.TimeCalculationExample;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,6 +18,8 @@ import java.util.*;
 public class AdminTrainServiceImpl implements IAdminTrainService {
     @Autowired
     AdminTrainMapper adminTrainMapper;
+    @Autowired
+    TicketMapper ticketMapper;
     /**
      * 查询车次信息
      */
@@ -111,9 +114,16 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
         int trainEntity = adminTrainMapper.addTrain(id,departureTime, arrivalTime, startStation, endStation,trainType, trainNumber, status, Double.valueOf(serviceLife), remark, manufactureDate, lastMaintenanceDate, runDuration);
         if (trainEntity != 0) {
             //添加车厢信息
+            Boolean ticketsAdded1 = false;
+            Boolean ticketsAdded2 = false;
+            Boolean ticketsAdded3 = false;  // 标志变量，确保只执行一次
             for (int i = 0; i < hardSeatCarriages; i++) {
                 long TrainCarriageID = snowflakeIdWorker.nextId();
                 trainEntity = adminTrainMapper.addTrainCarriage(TrainCarriageID+i,id, rangeInt, "硬座", 118);
+                if (!ticketsAdded1) {
+                    ticketMapper.addTickets(id,"硬座", startStation, endStation);  //添加车票信息，只执行一次
+                    ticketsAdded1 = true;
+                }
                 if (trainEntity != 0) {
                     //添加座位信息
                     for (int j = 0; j < 118; j++) {
@@ -126,6 +136,10 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
             for (int i = 0; i < hardSleeperCarriages; i++) {
                 long TrainCarriageID = snowflakeIdWorker.nextId();
                 trainEntity = adminTrainMapper.addTrainCarriage(TrainCarriageID+i,id, rangeInt, "硬卧", 66);
+                if (!ticketsAdded2) {
+                    ticketMapper.addTickets(id,"硬卧", startStation, endStation);  //添加车票信息，只执行一次
+                    ticketsAdded2 = true;
+                }
                 if (trainEntity != 0) {
                     //添加座位信息
                     for (int j = 0; j < 66; j++) {
@@ -138,6 +152,10 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
             for (int i = 0; i < softSleeperCarriages; i++) {
                 long TrainCarriageID = snowflakeIdWorker.nextId();
                 trainEntity = adminTrainMapper.addTrainCarriage(TrainCarriageID+i,id, rangeInt, "软卧", 36);
+                if (!ticketsAdded3) {
+                    ticketMapper.addTickets(id,"软卧", startStation, endStation);  //添加车票信息，只执行一次
+                    ticketsAdded3 = true;
+                }
                 if (trainEntity != 0) {
                     //添加座位信息
                     for (int j = 0; j < 36; j++) {
@@ -190,10 +208,18 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
         //添加车次信息
         int trainEntity = adminTrainMapper.addTrain(id,departureTime, arrivalTime, startStation, endStation, trainType, trainNumber, status, Double.valueOf(serviceLife), remark, manufactureDate, lastMaintenanceDate, runDuration);
         if (trainEntity != 0) {
+            Boolean ticketsAdded1 = false;
+            Boolean ticketsAdded2 = false;
+            Boolean ticketsAdded3 = false;
             //添加车厢信息
             for (int i = 0; i < businessClassCarriages; i++) {
                 long TrainCarriageID = snowflakeIdWorker.nextId();
                 trainEntity = adminTrainMapper.addTrainCarriage(TrainCarriageID+i,id, rangeInt, "商务座", 20);
+                if (! ticketsAdded1) {
+                    //添加车票信息
+                    ticketMapper.addTickets(id,"商务座", startStation, endStation);
+                    ticketsAdded1 = true;
+                }
                 if (trainEntity != 0) {
                     //添加座位信息
                     for (int j = 0; j < 7; j++) {
@@ -209,6 +235,11 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
             for (int i = 0; i < secondClassCarriages; i++) {
                 long TrainCarriageID = snowflakeIdWorker.nextId();
                 trainEntity = adminTrainMapper.addTrainCarriage(TrainCarriageID+i,id, rangeInt, "二等座", 70);
+                if (! ticketsAdded2) {
+                    //添加车票信息
+                    ticketMapper.addTickets(id,"二等座", startStation, endStation);
+                    ticketsAdded2 = true;
+                }
                 if (trainEntity != 0) {
                     //添加座位信息
                     for (int j = 0; j < 14; j++) {
@@ -224,6 +255,11 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
             for (int i = 0; i < firstClassCarriages; i++) {
                 long TrainCarriageID = snowflakeIdWorker.nextId();
                 trainEntity = adminTrainMapper.addTrainCarriage(TrainCarriageID+i,id, rangeInt, "一等座", 50);
+                if (! ticketsAdded3) {
+                    //添加车票信息
+                    ticketMapper.addTickets(id,"一等座", startStation, endStation);
+                    ticketsAdded3 = true;
+                }
                 if (trainEntity != 0) {
                     //添加座位信息
                     for (int j = 0; j < 10; j++) {

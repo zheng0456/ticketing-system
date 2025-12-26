@@ -8,6 +8,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="ticketing-system-gateway" />
+        <module name="ticketing-system-product" />
         <module name="ticketing-system-inventory" />
         <module name="ticketing-system-user" />
       </profile>
@@ -22,6 +23,7 @@
       <module name="ticketing-system-common" options="-parameters" />
       <module name="ticketing-system-gateway" options="-parameters" />
       <module name="ticketing-system-inventory" options="-parameters" />
+      <module name="ticketing-system-product" options="-parameters" />
       <module name="ticketing-system-user" options="-parameters" />
     </option>
   </component>

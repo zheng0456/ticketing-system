@@ -12,6 +12,7 @@
         <module>ticketing-system-user</module>
         <module>ticketing-system-gateway</module>
         <module>ticketing-system-inventory</module>
+        <module>ticketing-system-product</module>
     </modules>
 
     <!-- Spring Boot 版本管理 -->

@@ -5,24 +5,78 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(user): 添加用户菜单权限管理功能&#10;&#10;- 在IUserService中新增getMenuList方法获取用户菜单列表&#10;- 创建MenuEntity实体类定义菜单表结构&#10;- 实现MenuMapper数据访问层支持菜单查询操作&#10;- 添加SnowflakeIdWorker雪花算法工具类生成唯一ID&#10;- 重构UserController登录逻辑返回菜单列表信息&#10;- 更新UserMapper注册方法使用雪花算法生成用户ID&#10;- 在UserServiceImpl中实现菜单权限查询和用户注册事务处理&#10;- 同步MenuEntity到inventory模块以支持跨模块使用">
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/MenuEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/MenuEntity.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/until/TimeObject.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/MenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/utility/SnowflakeIdWorker.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/mapper/MenuMapper.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/utility/SnowflakeIdWorker.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-product/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/ProductApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/controller/TicketsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/mapper/TicketsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/service/ITicketService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/service/impl/TicketServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/MenuEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/MenuEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/controller/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/MenuEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/MenuEntity.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/mapper/UserMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/IUserService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/impl/UserServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/target/classes/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/target/classes/com/ticking/GateWayApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/target/classes/com/ticking/config/CorsConfig.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/ticketing-system-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-gateway/ticketing-system-gateway.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/etc/trainordersys/utils/SnowflakeIdWorker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/InventoryApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/controller/AdminTrainController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/controller/AdminTrainPassStationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/controller/AdminTrainStationController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/controller/TicketController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/MenuEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/RestUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainCarriageEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainPassStationEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainSeatEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainStationEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/TrainTicketEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainPassStationMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainStationMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/TicketMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/IAdminTrainPassStationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/IAdminTrainService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/IAdminTrainStationService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/ITicketService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainPassStationServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainStationImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/TicketServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/until/TimeCalculationExample.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/until/TimeObject.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/application.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/UserApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/controller/UserController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/MenuEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/RestUtil.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/RoleEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/RoleMenuEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/StudentDiscountEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainCarriageEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainPassStationEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainSeatEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainStationEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/TrainTicketEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/UserEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/UserRoleEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewOrderEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewOrderItemEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewRefundEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewScenicEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewTicketStockEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/ViewTicketTypeEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/mapper/MenuMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/mapper/UserMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/IUserService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/impl/UserServiceImpl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/utility/SnowflakeIdWorker.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/ticketing-system-user.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/ticketing-system-user.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,8 +86,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -63,32 +117,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/A_BYSJSystem/ticketing-system/ticketing-system-inventory/src/main/java/com/ticking/entity&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;6553a1af7cdcb9bc60e79f546d4fe930&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "E:/A_BYSJSystem/ticketing-system/ticketing-system-product/src/main/resources",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "spring.configuration.checksum": "6553a1af7cdcb9bc60e79f546d4fe930",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\A_BYSJSystem\ticketing-system\ticketing-system-product\src\main\resources" />
       <recent name="E:\A_BYSJSystem\ticketing-system\ticketing-system-inventory\src\main\java\com\ticking\entity" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -178,7 +233,7 @@
       <workItem from="1766459361687" duration="6000" />
       <workItem from="1766460222092" duration="544000" />
       <workItem from="1766561265535" duration="9664000" />
-      <workItem from="1766623418332" duration="27872000" />
+      <workItem from="1766623418332" duration="29060000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>

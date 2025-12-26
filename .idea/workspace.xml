@@ -4,18 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 实现列车途径站点删除功能&#10;&#10;- 在AdminTrainPassStationController中添加deleteTrainPassStation接口，&#10;  支持批量删除途径站点功能&#10;- 在AdminTrainPassStationMapper中添加@Delete注解实现数据库删除操作&#10;- 在AdminTrainPassStationService中实现deleteTrainPassStation业务逻辑&#10;- 优化import语句，使用通配符导入MyBatis注解&#10;- 更新工作区配置文件和相关编译文件">
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/TicketController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/TrainTicketEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/TicketMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/ITicketService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/TicketServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/until/TimeObject.java" afterDir="false" />
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(user): 添加用户菜单权限管理功能&#10;&#10;- 在IUserService中新增getMenuList方法获取用户菜单列表&#10;- 创建MenuEntity实体类定义菜单表结构&#10;- 实现MenuMapper数据访问层支持菜单查询操作&#10;- 添加SnowflakeIdWorker雪花算法工具类生成唯一ID&#10;- 重构UserController登录逻辑返回菜单列表信息&#10;- 更新UserMapper注册方法使用雪花算法生成用户ID&#10;- 在UserServiceImpl中实现菜单权限查询和用户注册事务处理&#10;- 同步MenuEntity到inventory模块以支持跨模块使用">
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/entity/MenuEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/entity/MenuEntity.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/until/TimeObject.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/MenuMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/utility/SnowflakeIdWorker.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/mapper/MenuMapper.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/utility/SnowflakeIdWorker.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminTrainMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/mapper/AdminTrainMapper.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/target/classes/com/ticking/service/impl/AdminTrainServiceImpl.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/MenuEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/MenuEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/controller/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/controller/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/MenuEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/entity/MenuEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/mapper/UserMapper.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/mapper/UserMapper.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/IUserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/IUserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/impl/UserServiceImpl.class" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/target/classes/com/ticking/service/impl/UserServiceImpl.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,8 +32,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -88,6 +95,7 @@
       <recent name="E:\A_BYSJSystem\ticketing-system\ticketing-system-inventory\src\main\java\com\ticking\until" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.ticking.utility" />
       <recent name="com.ticking.entity" />
       <recent name="com.ticking.until" />
     </key>
@@ -170,7 +178,7 @@
       <workItem from="1766459361687" duration="6000" />
       <workItem from="1766460222092" duration="544000" />
       <workItem from="1766561265535" duration="9664000" />
-      <workItem from="1766623418332" duration="14659000" />
+      <workItem from="1766623418332" duration="27872000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -340,7 +348,14 @@
       <option name="project" value="LOCAL" />
       <updated>1766569699355</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="feat(train): 添加车票管理和查询功能&#10;&#10;- 在AdminTrainMapper中添加查询车次和车厢信息的方法&#10;- 在AdminTrainServiceImpl中集成TicketMapper并添加车票创建逻辑&#10;- 创建TicketController提供车票信息查询和修改接口&#10;- 实现TicketMapper数据访问层支持车票信息操作&#10;- 添加TicketServiceImpl业务逻辑处理车票相关功能&#10;- 创建TrainTicketEntity实体类定义车票信息表结构&#10;- 实现TimeObject工具类处理时间格式转换&#10;- 在列车添加流程中自动创建对应的车票信息记录">
+      <created>1766655675443</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1766655675443</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -358,8 +373,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(user): 初始化用户模块基础结构&#10;&#10;- 添加用户实体类 UserEntity 包含基本字段与 Lombok 注解&#10;- 创建用户数据访问接口 UserMapper 并实现登录查询方法- 定义用户服务接口 IUserService 及其实现类 UserServiceImpl&#10;- 实现用户控制器 UserController 提供登录接口&#10;- 配置用户模块 application.yaml 文件集成 Nacos 配置中心&#10;- 在 IDEA 项目中注册 ticketing-system-user 模块并配置运行环境" />
-    <MESSAGE value="chore(deps): 更新阿里巴巴云依赖至2023.0.1.0版本 spring&#10;&#10;- 将-cloud-alibaba-commons 从2023.0.1.2 降级至 2023.0.1.0&#10;- 移除旧版 nacos-discovery2023.0.1.2 依赖&#10;- 添加 sentinel 相关依赖 1.8.6 版本&#10;- 添加 druid 数据库连接池1.2.20 版本&#10;- 添加 fastjson2 2.0.22 版本- 降级 jackson 核心库至 2.15.3 版本- 添加 rocketmq、sentinel-datasource 等相关依赖&#10;- 更新 IDEA 编译器参数配置，为 ticketing-system 模块添加 -parameters 选项- 在 application.yaml 中增加 db-common 配置导入和 web-application-type 配置" />
     <MESSAGE value="chore(deps): 更新项目依赖库版本并调整配置- 将 spring-cloud-alibaba 相关依赖版本从2023.0.1.2降级至2023.0.1.0&#10;- 移除 mybatis-plus 相关依赖库- 添加 sentinel、druid、fastjson2 等新依赖库&#10;- 在 application.yaml 中为网关服务添加 web-application-type 配置&#10;-为用户服务添加 MyBatis 配置及调试模式开关&#10;- 更新 IDEA 编译器配置，启用默认注解处理并添加模块参数选项&#10;- 修改 IUserService 接口方法参数类型由 UserEntity 改为 String" />
     <MESSAGE value="feat(user): 实现用户注册功能并优化登录逻辑&#10;&#10;- 修改 IUserService 接口，将 login 方法参数改为 UserEntity 类型，并新增 register 方法&#10;- 在 UserController 中增加 /register 接口，调用 userService.register 处理用户注册请求&#10;- 更新 UserEntity 实体类字段，补充真实姓名、身份证号、邮箱、注册时间等属性&#10;- 调整 UserMapper 的 login 查询语句，根据用户名和密码进行匹配查询&#10;- 删除无用的 imports 和注释，简化 UserServiceImpl 实现代码&#10;- 新增 RestUtil 工具类用于统一返回结果格式&#10;- 为网关服务添加 spring-cloud-starter-loadbalancer 依赖以支持负载均衡&#10;- 注释掉 spring-boot-starter-security 依赖，暂不启用安全框架" />
     <MESSAGE value="feat(user): 实现用户登录和注册功能&#10;&#10;- 修改 IUserService 接口，新增 register 方法并调整 login 方法参数类型&#10;- 更新 UserController，使用 RestUtil 统一返回格式处理登录和注册逻辑&#10;- 扩展 UserEntity 实体类字段，增加真实姓名、身份证号、邮箱等属性&#10;- 修改 UserMapper，实现基于注解的登录验证和用户注册 SQL 操作&#10;- UserServiceImpl 中完善登录与注册业务逻辑，加入用户名重复检查机制&#10;- 添加 CorsConfig 配置类解决跨域问题&#10;- 为 gateway 模块引入 spring-cloud-starter-loadbalancer 依赖&#10;- 新增 RestUtil 工具类用于统一接口响应格式&#10;- 更新相关 Maven 依赖库版本并在 workspace.xml 中反映变更记录" />
@@ -383,25 +396,22 @@
     <MESSAGE value="feat(train): 实现列车途径站点管理功能&#10;&#10;- 新增AdminTrainPassStationController控制器，提供查询和添加途径站点的接口&#10;- 新增AdminTrainPassStationMapper数据访问层，实现途径站点的数据库操作&#10;- 新增AdminTrainPassStationService服务层接口及实现类&#10;- 在TrainPassStationEntity实体类中添加车次编号和站点名称字段&#10;- 修改AdminTrainMapper和AdminTrainStationMapper添加查询车次编号和站点名称的方法&#10;- 调整到达时间和离站时间字段类型为String格式&#10;- 实现在查询途径站点时自动关联车次编号和站点名称" />
     <MESSAGE value="feat(train): 实现列车途径站点修改功能&#10;&#10;- 在AdminTrainPassStationController中添加updateTrainPassStation接口&#10;- 在AdminTrainPassStationMapper中添加@Update注解实现数据库更新操作&#10;- 在AdminTrainPassStationService中实现updateTrainPassStation业务逻辑&#10;- 使用TimeCalculationExample计算停留时间并更新途径站点信息&#10;- 完善相关方法注释和参数处理逻辑" />
     <MESSAGE value="feat(train): 实现列车途径站点删除功能&#10;&#10;- 在AdminTrainPassStationController中添加deleteTrainPassStation接口，&#10;  支持批量删除途径站点功能&#10;- 在AdminTrainPassStationMapper中添加@Delete注解实现数据库删除操作&#10;- 在AdminTrainPassStationService中实现deleteTrainPassStation业务逻辑&#10;- 优化import语句，使用通配符导入MyBatis注解&#10;- 更新工作区配置文件和相关编译文件" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(train): 实现列车途径站点删除功能&#10;&#10;- 在AdminTrainPassStationController中添加deleteTrainPassStation接口，&#10;  支持批量删除途径站点功能&#10;- 在AdminTrainPassStationMapper中添加@Delete注解实现数据库删除操作&#10;- 在AdminTrainPassStationService中实现deleteTrainPassStation业务逻辑&#10;- 优化import语句，使用通配符导入MyBatis注解&#10;- 更新工作区配置文件和相关编译文件" />
+    <MESSAGE value="feat(train): 添加车票管理和查询功能&#10;&#10;- 在AdminTrainMapper中添加查询车次和车厢信息的方法&#10;- 在AdminTrainServiceImpl中集成TicketMapper并添加车票创建逻辑&#10;- 创建TicketController提供车票信息查询和修改接口&#10;- 实现TicketMapper数据访问层支持车票信息操作&#10;- 添加TicketServiceImpl业务逻辑处理车票相关功能&#10;- 创建TrainTicketEntity实体类定义车票信息表结构&#10;- 实现TimeObject工具类处理时间格式转换&#10;- 在列车添加流程中自动创建对应的车票信息记录" />
+    <MESSAGE value="feat(user): 添加用户菜单权限管理功能&#10;&#10;- 在IUserService中新增getMenuList方法获取用户菜单列表&#10;- 创建MenuEntity实体类定义菜单表结构&#10;- 实现MenuMapper数据访问层支持菜单查询操作&#10;- 添加SnowflakeIdWorker雪花算法工具类生成唯一ID&#10;- 重构UserController登录逻辑返回菜单列表信息&#10;- 更新UserMapper注册方法使用雪花算法生成用户ID&#10;- 在UserServiceImpl中实现菜单权限查询和用户注册事务处理&#10;- 同步MenuEntity到inventory模块以支持跨模块使用" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(user): 添加用户菜单权限管理功能&#10;&#10;- 在IUserService中新增getMenuList方法获取用户菜单列表&#10;- 创建MenuEntity实体类定义菜单表结构&#10;- 实现MenuMapper数据访问层支持菜单查询操作&#10;- 添加SnowflakeIdWorker雪花算法工具类生成唯一ID&#10;- 重构UserController登录逻辑返回菜单列表信息&#10;- 更新UserMapper注册方法使用雪花算法生成用户ID&#10;- 在UserServiceImpl中实现菜单权限查询和用户注册事务处理&#10;- 同步MenuEntity到inventory模块以支持跨模块使用" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java</url>
-          <line>40</line>
+          <line>42</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java</url>
-          <line>31</line>
+          <line>39</line>
           <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java</url>
-          <line>20</line>
-          <option name="timeStamp" value="8" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainStationImpl.java</url>
@@ -447,6 +457,11 @@
           <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/TicketServiceImpl.java</url>
           <line>45</line>
           <option name="timeStamp" value="79" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java</url>
+          <line>31</line>
+          <option name="timeStamp" value="80" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

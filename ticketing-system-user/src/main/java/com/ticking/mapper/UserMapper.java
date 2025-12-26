@@ -13,7 +13,12 @@ public interface UserMapper {
     @Select("select * from user where user_name=#{userName} and password=#{password} and status=1")
     UserEntity login(String userName, String password);
 
-    @Insert("INSERT INTO user(user_name,password,phone,register_time,status) VALUES (#{userName},#{password},#{phone},#{dataTime},1)")
-    Boolean register(String userName, String password, String phone,String dataTime);
+    @Insert("INSERT INTO user(user_id,user_name,password,phone,register_time,status) VALUES (#{userId},#{userName},#{password},#{phone},#{dataTime},1)")
+    Boolean register(Long userId,String userName, String password, String phone,String dataTime);
 
+    /**
+     * 添加用户角色
+     */
+    @Insert("INSERT INTO user_role(user_id,role_id) VALUES (#{userId},#{roleId})")
+    void addUserRole(long userId, int i);
 }

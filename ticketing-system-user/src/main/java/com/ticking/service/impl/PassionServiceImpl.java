@@ -39,4 +39,16 @@ public class PassionServiceImpl implements IPassionService {
         boolean result=passionMapper.updatePassion(passion);
         return result;
     }
+
+    /**
+     * 删除用户乘车人
+     */
+    @Override
+    public Boolean deletePassion(Long [] ids) {
+        boolean result=false;
+        for (Long id : ids){
+            result=passionMapper.deletePassion(id);
+        }
+        return result;
+    }
 }

@@ -1,10 +1,7 @@
 package com.ticking.mapper;
 
 import com.ticking.entity.PassionEntity;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
-import org.apache.ibatis.annotations.Update;
+import org.apache.ibatis.annotations.*;
 
 import java.util.List;
 
@@ -27,4 +24,10 @@ public interface PassionMapper {
      */
     @Update("update user_id_card set name=#{name},phone=#{phone},card_id=#{cardId},card_type=#{cardType},discount_type=#{discountType} where id=#{id}")
     boolean updatePassion(PassionEntity passion);
+
+    /**
+     * 删除用户乘车人
+     */
+    @Delete("delete from user_id_card where id=#{id}")
+    boolean deletePassion(Long id);
 }

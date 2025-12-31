@@ -10,4 +10,6 @@ public interface IPassionService {
     List<PassionEntity> queryPassion(Long userId);
 
     Boolean updatePassion(PassionEntity passion);
+
+    Boolean deletePassion(Long [] ids);
 }

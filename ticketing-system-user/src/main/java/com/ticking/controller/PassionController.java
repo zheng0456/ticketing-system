@@ -4,6 +4,7 @@ import com.ticking.entity.PassionEntity;
 import com.ticking.entity.RestUtil;
 import com.ticking.entity.UserEntity;
 import com.ticking.service.IPassionService;
+import com.ticking.utility.LongObject;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -62,6 +63,21 @@ public class PassionController {
             return RestUtil.success();
         } else {
             return RestUtil.error("修改失败");
+        }
+    }
+
+    /**
+     * 删除用户乘车人
+     */
+    @PostMapping("/passenger/delete")
+    public @ResponseBody RestUtil deletePassion(@RequestBody Object[] ids) {
+        // 类型安全转换：将Object数组转换为Long数组
+        Long[] longIds = LongObject.toLong(ids);
+        Boolean result = passionService.deletePassion(longIds);
+        if (result == true) {
+            return RestUtil.success();
+        } else {
+            return RestUtil.error("删除失败");
         }
     }
 }

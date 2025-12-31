@@ -30,4 +30,13 @@ public class PassionServiceImpl implements IPassionService {
         List<PassionEntity> passionList=passionMapper.queryPassion(userId);
         return passionList;
     }
+
+    /**
+     * 修改用户乘车人
+     */
+    @Override
+    public Boolean updatePassion(PassionEntity passion) {
+        boolean result=passionMapper.updatePassion(passion);
+        return result;
+    }
 }

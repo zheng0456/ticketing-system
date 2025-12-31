@@ -4,34 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(product): 实现车票查询功能&#10;&#10;- 添加 TicketsController 提供 /tickets 接口支持车票信息查询&#10;- 创建 ITicketService 和 TicketServiceImpl 实现车票业务逻辑&#10;- 添加 TicketsMapper 数据访问层支持车票信息查询操作&#10;- 创建 RestUtil 统一接口响应格式&#10;- 添加 TimeCalculationExample 和 TimeObject 时间处理工具类&#10;- 创建 TrainTicketEntity 实体类定义车票信息表结构&#10;- 移除项目模块中多余的注解生成源码路径配置&#10;- 在 IDEA 工作区配置中添加产品服务模块运行配置">
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/PassionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/PassionEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/PassionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IPassionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/PassionServiceImpl.java" afterDir="false" />
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(user): 实现用户乘车人管理功能&#10;&#10;- 添加PassionEntity实体类定义用户乘车人信息表结构&#10;- 创建IPassionService接口和PassionServiceImpl实现类&#10;- 实现PassionMapper数据访问层支持乘车人增查操作&#10;- 添加PassionController提供/passenger/list和/passenger/add接口&#10;- 在UserController中集成JWT认证替代session存储&#10;- 修改登录接口返回token和用户信息&#10;- 添加getCurrentUser接口获取当前用户信息&#10;- 在IUserService中新增getUserById方法&#10;- 添加JWT相关依赖支持令牌认证&#10;- 删除多个无用的实体类文件">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/RoleEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/RoleMenuEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/StudentDiscountEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/TrainCarriageEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/TrainEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/TrainPassStationEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/TrainSeatEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/TrainStationEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/TrainTicketEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/UserRoleEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/ViewOrderEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/ViewOrderItemEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/ViewRefundEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/ViewScenicEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/ViewTicketStockEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/ViewTicketTypeEntity.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/PassionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/PassionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/PassionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/PassionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IPassionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IPassionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/PassionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/PassionServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -201,7 +179,7 @@
       <workItem from="1766736053260" duration="4686000" />
       <workItem from="1766837356036" duration="5154000" />
       <workItem from="1766886254917" duration="12250000" />
-      <workItem from="1766994401578" duration="17435000" />
+      <workItem from="1766994401578" duration="18411000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -392,7 +370,14 @@
       <option name="project" value="LOCAL" />
       <updated>1766906595492</updated>
     </task>
-    <option name="localTasksCounter" value="28" />
+    <task id="LOCAL-00028" summary="feat(user): 实现用户乘车人管理功能&#10;&#10;- 添加PassionEntity实体类定义用户乘车人信息表结构&#10;- 创建IPassionService接口和PassionServiceImpl实现类&#10;- 实现PassionMapper数据访问层支持乘车人增查操作&#10;- 添加PassionController提供/passenger/list和/passenger/add接口&#10;- 在UserController中集成JWT认证替代session存储&#10;- 修改登录接口返回token和用户信息&#10;- 添加getCurrentUser接口获取当前用户信息&#10;- 在IUserService中新增getUserById方法&#10;- 添加JWT相关依赖支持令牌认证&#10;- 删除多个无用的实体类文件">
+      <created>1767157353179</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1767157353179</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +395,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(user): 实现用户登录和注册功能&#10;&#10;- 修改 IUserService 接口，新增 register 方法并调整 login 方法参数类型&#10;- 更新 UserController，使用 RestUtil 统一返回格式处理登录和注册逻辑&#10;- 扩展 UserEntity 实体类字段，增加真实姓名、身份证号、邮箱等属性&#10;- 修改 UserMapper，实现基于注解的登录验证和用户注册 SQL 操作&#10;- UserServiceImpl 中完善登录与注册业务逻辑，加入用户名重复检查机制&#10;- 添加 CorsConfig 配置类解决跨域问题&#10;- 为 gateway 模块引入 spring-cloud-starter-loadbalancer 依赖&#10;- 新增 RestUtil 工具类用于统一接口响应格式&#10;- 更新相关 Maven 依赖库版本并在 workspace.xml 中反映变更记录" />
     <MESSAGE value="feat(user): 完善用户登录注册功能及相关实体类&#10;&#10;- 修改 RestUtil 工具类，统一成功和错误响应格式，调整状态码&#10;- 新增多个火车票务相关实体类：TrainTicketEntity、StudentDiscountEntity、TrainCarriageEntity、TrainEntity、TrainPassStationEntity、TrainSeatEntity、TrainStationEntity&#10;- UserController 使用 @RestController 注解并添加 @RequestBody 参数绑定&#10;- UserEntity 实体类字段类型和顺序优化，新增用户权限码和最后登录时间&#10;- UserMapper 调整 SQL 查询语句及参数占位符，login 方法返回 UserEntity 对象&#10;- UserServiceImpl 完善登录与注册业务逻辑，增强空值判断和结果处理" />
     <MESSAGE value="feat(user): 完善用户登录注册功能及实体类定义&#10;&#10;- 修改 RestUtil 工具类，统一成功和错误响应的状态码与消息格式&#10;- 新增多个火车票务相关实体类：StudentDiscountEntity、TrainCarriageEntity、&#10;  TrainEntity、TrainPassStationEntity、TrainSeatEntity、TrainStationEntity、&#10;  TrainTicketEntity&#10;- 重构 UserController，使用 @RestController 和 @RequestBody 注解优化接&#10;  口设计&#10;- 调整 UserEntity 实体类字段类型和顺序，增加用户权限码和最后登录时间字段&#10;- 修改 UserMapper，修正 SQL 查询语句并调整返回值类型以适配登录逻辑&#10;- 优化 UserServiceImpl 中的登录与注册业务逻辑，增强空值判断和重复用户名检&#10;  查机制" />
     <MESSAGE value="feat(user): 完善用户注册功能及实体类定义&#10;&#10;- 新增角色权限实体类 RoleEntity&#10;- 修改 UserEntity 状态字段类型为 Boolean&#10;- 扩展 UserEntity 权限码字段说明&#10;- UserController 增加注册接口&#10;- UserMapper 添加注册 SQL 方法&#10;- 移除 Spring Security 依赖声明&#10;- 更新项目依赖管理配置" />
@@ -435,7 +419,8 @@
     <MESSAGE value="feat(user): 添加用户菜单权限管理功能&#10;&#10;- 在IUserService中新增getMenuList方法获取用户菜单列表&#10;- 创建MenuEntity实体类定义菜单表结构&#10;- 实现MenuMapper数据访问层支持菜单查询操作&#10;- 添加SnowflakeIdWorker雪花算法工具类生成唯一ID&#10;- 重构UserController登录逻辑返回菜单列表信息&#10;- 更新UserMapper注册方法使用雪花算法生成用户ID&#10;- 在UserServiceImpl中实现菜单权限查询和用户注册事务处理&#10;- 同步MenuEntity到inventory模块以支持跨模块使用" />
     <MESSAGE value="feat(product): 添加产品服务模块&#10;&#10;- 创建 ticketing-system-product 模块并配置 Maven 依赖&#10;- 添加 Nacos 服务注册与发现、配置中心支持&#10;- 集成 Sentinel 流量控制和 RocketMQ 消息队列&#10;- 配置 MyBatis 数据访问层和 MySQL 数据库连接&#10;- 创建 TicketsController、TicketsMapper 和 TicketService&#10;- 在 pom.xml 中添加 product 模块到多模块项目&#10;- 更新 IDEA 编译器和编码配置支持新模块&#10;- 添加 JWT 认证和 Lombok 等开发依赖&#10;- 配置 application.yaml 支持 Nacos 配置管理&#10;- 同步 workspace.xml 变更记录到项目历史" />
     <MESSAGE value="feat(product): 实现车票查询功能&#10;&#10;- 添加 TicketsController 提供 /tickets 接口支持车票信息查询&#10;- 创建 ITicketService 和 TicketServiceImpl 实现车票业务逻辑&#10;- 添加 TicketsMapper 数据访问层支持车票信息查询操作&#10;- 创建 RestUtil 统一接口响应格式&#10;- 添加 TimeCalculationExample 和 TimeObject 时间处理工具类&#10;- 创建 TrainTicketEntity 实体类定义车票信息表结构&#10;- 移除项目模块中多余的注解生成源码路径配置&#10;- 在 IDEA 工作区配置中添加产品服务模块运行配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(product): 实现车票查询功能&#10;&#10;- 添加 TicketsController 提供 /tickets 接口支持车票信息查询&#10;- 创建 ITicketService 和 TicketServiceImpl 实现车票业务逻辑&#10;- 添加 TicketsMapper 数据访问层支持车票信息查询操作&#10;- 创建 RestUtil 统一接口响应格式&#10;- 添加 TimeCalculationExample 和 TimeObject 时间处理工具类&#10;- 创建 TrainTicketEntity 实体类定义车票信息表结构&#10;- 移除项目模块中多余的注解生成源码路径配置&#10;- 在 IDEA 工作区配置中添加产品服务模块运行配置" />
+    <MESSAGE value="feat(user): 实现用户乘车人管理功能&#10;&#10;- 添加PassionEntity实体类定义用户乘车人信息表结构&#10;- 创建IPassionService接口和PassionServiceImpl实现类&#10;- 实现PassionMapper数据访问层支持乘车人增查操作&#10;- 添加PassionController提供/passenger/list和/passenger/add接口&#10;- 在UserController中集成JWT认证替代session存储&#10;- 修改登录接口返回token和用户信息&#10;- 添加getCurrentUser接口获取当前用户信息&#10;- 在IUserService中新增getUserById方法&#10;- 添加JWT相关依赖支持令牌认证&#10;- 删除多个无用的实体类文件" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(user): 实现用户乘车人管理功能&#10;&#10;- 添加PassionEntity实体类定义用户乘车人信息表结构&#10;- 创建IPassionService接口和PassionServiceImpl实现类&#10;- 实现PassionMapper数据访问层支持乘车人增查操作&#10;- 添加PassionController提供/passenger/list和/passenger/add接口&#10;- 在UserController中集成JWT认证替代session存储&#10;- 修改登录接口返回token和用户信息&#10;- 添加getCurrentUser接口获取当前用户信息&#10;- 在IUserService中新增getUserById方法&#10;- 添加JWT相关依赖支持令牌认证&#10;- 删除多个无用的实体类文件" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -8,4 +8,6 @@ public interface IPassionService {
     Boolean addPassion(PassionEntity passion);
 
     List<PassionEntity> queryPassion(Long userId);
+
+    Boolean updatePassion(PassionEntity passion);
 }

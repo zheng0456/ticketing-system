@@ -52,4 +52,16 @@ public class PassionController {
             return RestUtil.error("添加失败");
         }
     }
+    /**
+     * 修改用户乘车人
+     */
+    @PostMapping("/passenger/update")
+    public @ResponseBody RestUtil updatePassion(@RequestBody PassionEntity passion) {
+        Boolean result = passionService.updatePassion(passion);
+        if (result == true) {
+            return RestUtil.success();
+        } else {
+            return RestUtil.error("修改失败");
+        }
+    }
 }

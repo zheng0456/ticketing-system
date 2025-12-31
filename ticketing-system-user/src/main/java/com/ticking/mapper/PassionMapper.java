@@ -4,6 +4,7 @@ import com.ticking.entity.PassionEntity;
 import org.apache.ibatis.annotations.Insert;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.Update;
 
 import java.util.List;
 
@@ -20,4 +21,10 @@ public interface PassionMapper {
      */
     @Select("select * from user_id_card where user_id=#{userId}")
     List<PassionEntity> queryPassion(Long userId);
+
+    /**
+     * 修改用户乘车人
+     */
+    @Update("update user_id_card set name=#{name},phone=#{phone},card_id=#{cardId},card_type=#{cardType},discount_type=#{discountType} where id=#{id}")
+    boolean updatePassion(PassionEntity passion);
 }

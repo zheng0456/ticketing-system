@@ -21,4 +21,10 @@ public interface UserMapper {
      */
     @Insert("INSERT INTO user_role(user_id,role_id) VALUES (#{userId},#{roleId})")
     void addUserRole(long userId, int i);
+
+    /**
+     * 根据用户ID获取用户信息
+     */
+    @Select("SELECT * FROM user WHERE user_id = #{userId} and status=1")
+    UserEntity selectById(Long userId);
 }

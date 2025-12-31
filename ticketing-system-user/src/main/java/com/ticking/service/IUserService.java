@@ -11,4 +11,5 @@ public interface IUserService {
     Boolean register(UserEntity user);
 
     List<MenuEntity> getMenuList(Long userId);
+    UserEntity getUserById(Long userId);
 }

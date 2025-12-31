@@ -60,4 +60,9 @@ public class UserServiceImpl  implements IUserService {
         List<MenuEntity> menuList=menuMapper.getMenuList(userId);
         return menuList;
     }
+
+    @Override
+    public UserEntity getUserById(Long userId) {
+        return userMapper.selectById(userId);
+    }
 }

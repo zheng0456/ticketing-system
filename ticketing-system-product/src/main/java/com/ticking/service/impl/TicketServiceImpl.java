@@ -47,4 +47,13 @@ public class TicketServiceImpl implements ITicketService {
         }
         return ticket;
     }
+
+    /**
+     * 查询车票 座位 信息
+     */
+    @Override
+    public List<Map<String, Object>> selectTicketMessages(Long ticketsId) {
+        List<Map<String, Object>> ticket=ticketsMapper.selectTicketMessages(ticketsId);
+        return ticket;
+    }
 }

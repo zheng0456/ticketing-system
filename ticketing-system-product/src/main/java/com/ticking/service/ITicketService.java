@@ -5,4 +5,6 @@ import java.util.Map;
 
 public interface ITicketService {
     List<Map<String, Object>> selectAllTickets(Map<String, Object> tickets);
+
+    List<Map<String, Object>> selectTicketMessages(Long ticketsId);
 }

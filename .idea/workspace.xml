@@ -5,11 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(ticket): 添加车票座位信息查询功能&#10;&#10;- 在 ITicketService 接口中新增 selectTicketMessages 方法&#10;- 在 TicketsController 中添加 /ticketMessages 端点处理座位信息查询&#10;- 在 TicketServiceImpl 中实现座位信息查询的业务逻辑&#10;- 在 TicketsMapper 中添加查询车票座位信息的 SQL 映射&#10;- 添加参数验证和错误处理机制">
+      <change afterPath="$PROJECT_DIR$/ticketing-system-order/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/OrderApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/controller/CreateOrderController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/mapper/CreateOrderMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/ICreateOrderService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/impl/CreateOrderServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/resources/application.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/controller/TicketsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/controller/TicketsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/mapper/TicketsMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/mapper/TicketsMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/service/ITicketService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/service/ITicketService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/service/impl/TicketServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/service/impl/TicketServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/ticketing-system-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-gateway/ticketing-system-gateway.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/ticketing-system-user.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/ticketing-system-user.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,7 +69,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/A_BYSJSystem/ticketing-system/ticketing-system-product/src/main/java/com/ticking/entity",
+    "last_opened_file_path": "E:/A_BYSJSystem/ticketing-system/ticketing-system-order/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -78,6 +86,7 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\A_BYSJSystem\ticketing-system\ticketing-system-order\src\main\resources" />
       <recent name="E:\A_BYSJSystem\ticketing-system\ticketing-system-product\src\main\java\com\ticking\entity" />
       <recent name="E:\A_BYSJSystem\ticketing-system\ticketing-system-product\src\main\resources" />
       <recent name="E:\A_BYSJSystem\ticketing-system\ticketing-system-inventory\src\main\java\com\ticking\entity" />
@@ -182,6 +191,7 @@
       <workItem from="1766886254917" duration="12250000" />
       <workItem from="1766994401578" duration="20251000" />
       <workItem from="1767172074583" duration="11076000" />
+      <workItem from="1767255758167" duration="4124000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -400,7 +410,14 @@
       <option name="project" value="LOCAL" />
       <updated>1767172707744</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="feat(ticket): 添加车票座位信息查询功能&#10;&#10;- 在 ITicketService 接口中新增 selectTicketMessages 方法&#10;- 在 TicketsController 中添加 /ticketMessages 端点处理座位信息查询&#10;- 在 TicketServiceImpl 中实现座位信息查询的业务逻辑&#10;- 在 TicketsMapper 中添加查询车票座位信息的 SQL 映射&#10;- 添加参数验证和错误处理机制">
+      <created>1767255855369</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1767255855369</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -444,121 +461,5 @@
     <MESSAGE value="feat(user): 实现删除和批量删除用户乘车人管理功能" />
     <MESSAGE value="feat(ticket): 添加车票座位信息查询功能&#10;&#10;- 在 ITicketService 接口中新增 selectTicketMessages 方法&#10;- 在 TicketsController 中添加 /ticketMessages 端点处理座位信息查询&#10;- 在 TicketServiceImpl 中实现座位信息查询的业务逻辑&#10;- 在 TicketsMapper 中添加查询车票座位信息的 SQL 映射&#10;- 添加参数验证和错误处理机制" />
     <option name="LAST_COMMIT_MESSAGE" value="feat(ticket): 添加车票座位信息查询功能&#10;&#10;- 在 ITicketService 接口中新增 selectTicketMessages 方法&#10;- 在 TicketsController 中添加 /ticketMessages 端点处理座位信息查询&#10;- 在 TicketServiceImpl 中实现座位信息查询的业务逻辑&#10;- 在 TicketsMapper 中添加查询车票座位信息的 SQL 映射&#10;- 添加参数验证和错误处理机制" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java</url>
-          <line>68</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java</url>
-          <line>39</line>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainStationImpl.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java</url>
-          <line>57</line>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainStationController.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="50" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainServiceImpl.java</url>
-          <line>43</line>
-          <option name="timeStamp" value="52" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainController.java</url>
-          <line>62</line>
-          <option name="timeStamp" value="66" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminTrainPassStationController.java</url>
-          <line>55</line>
-          <option name="timeStamp" value="73" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/TicketServiceImpl.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="77" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/TicketController.java</url>
-          <line>24</line>
-          <option name="timeStamp" value="78" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/TicketServiceImpl.java</url>
-          <line>45</line>
-          <option name="timeStamp" value="79" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/service/impl/TicketServiceImpl.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="84" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/service/impl/TicketServiceImpl.java</url>
-          <line>37</line>
-          <option name="timeStamp" value="85" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/service/impl/TicketServiceImpl.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="86" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java</url>
-          <line>28</line>
-          <option name="timeStamp" value="88" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java</url>
-          <line>35</line>
-          <option name="timeStamp" value="90" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/PassionController.java</url>
-          <line>41</line>
-          <option name="timeStamp" value="91" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/PassionController.java</url>
-          <line>48</line>
-          <option name="timeStamp" value="92" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/PassionController.java</url>
-          <line>75</line>
-          <option name="timeStamp" value="98" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/service/impl/TicketServiceImpl.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="101" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/controller/TicketsController.java</url>
-          <line>33</line>
-          <option name="timeStamp" value="102" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/controller/TicketsController.java</url>
-          <line>34</line>
-          <option name="timeStamp" value="103" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>

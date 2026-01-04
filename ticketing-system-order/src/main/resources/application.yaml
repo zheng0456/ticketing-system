@@ -11,6 +11,19 @@ spring:
       - optional:nacos:${spring.application.name}.yaml
       - optional:nacos:db-common.yaml
       - nacos:nacos-discovery.yaml
+  data:
+    redis:
+      host: 192.168.247.129
+      port: 6379
+      password: 123456
+      database: 0
+      timeout: 3000ms
+      lettuce:
+        pool:
+          max-active: 8
+          max-idle: 8
+          min-idle: 2
+          max-wait: 3000ms
 # MyBatis配置
 mybatis:
   mapper-locations: classpath:mapper/*.xml

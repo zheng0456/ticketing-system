@@ -4,19 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(ticket): 添加车票座位信息查询功能&#10;&#10;- 在 ITicketService 接口中新增 selectTicketMessages 方法&#10;- 在 TicketsController 中添加 /ticketMessages 端点处理座位信息查询&#10;- 在 TicketServiceImpl 中实现座位信息查询的业务逻辑&#10;- 在 TicketsMapper 中添加查询车票座位信息的 SQL 映射&#10;- 添加参数验证和错误处理机制">
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/OrderApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/controller/CreateOrderController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/mapper/CreateOrderMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/ICreateOrderService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/impl/CreateOrderServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/resources/application.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(order): 添加订单服务模块&#10;&#10;- 创建 ticketing-system-order 模块并配置 pom.xml 依赖&#10;- 添加 OrderApplication 主启动类和相关配置&#10;- 创建订单创建相关的 Controller、Service、Mapper 基础结构&#10;- 配置 application.yaml 应用配置和 Nacos 集成&#10;- 更新项目编译配置和编码设置以支持新模块">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-gateway/ticketing-system-gateway.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-gateway/ticketing-system-gateway.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-product/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-product/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/resources/application.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-user/ticketing-system-user.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/ticketing-system-user.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,29 +54,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/A_BYSJSystem/ticketing-system/ticketing-system-order/src/main/resources",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "service.view.auto.scroll.to.source": "true",
-    "settings.editor.selected.configurable": "preferences.lookFeel",
-    "spring.configuration.checksum": "eaf05519a9e2a3d7de507849bba97871",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/A_BYSJSystem/ticketing-system/ticketing-system-order/src/main/resources&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;service.view.auto.scroll.to.source&quot;: &quot;true&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;e46a42eea4e0f8f173727c56a71c13b7&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -118,6 +114,13 @@
     <configuration name="InventoryApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="ticketing-system-inventory" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.ticking.InventoryApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="ticketing-system-order" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.ticking.OrderApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -191,7 +194,9 @@
       <workItem from="1766886254917" duration="12250000" />
       <workItem from="1766994401578" duration="20251000" />
       <workItem from="1767172074583" duration="11076000" />
-      <workItem from="1767255758167" duration="4124000" />
+      <workItem from="1767255758167" duration="4207000" />
+      <workItem from="1767486564137" duration="23000" />
+      <workItem from="1767489801634" duration="2981000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -417,7 +422,14 @@
       <option name="project" value="LOCAL" />
       <updated>1767255855369</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="feat(order): 添加订单服务模块&#10;&#10;- 创建 ticketing-system-order 模块并配置 pom.xml 依赖&#10;- 添加 OrderApplication 主启动类和相关配置&#10;- 创建订单创建相关的 Controller、Service、Mapper 基础结构&#10;- 配置 application.yaml 应用配置和 Nacos 集成&#10;- 更新项目编译配置和编码设置以支持新模块">
+      <created>1767321432619</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1767321432619</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -435,7 +447,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(config): 添加 Spring Cloud 应用配置文件&#10;&#10;- 配置 Nacos 作为配置中心和注册中心&#10;- 设置应用名称符合 Spring Cloud 要求（使用中划线）&#10;- 引入多个 Nacos 配置文件（应用配置、数据库通用配置等）&#10;- 添加 MyBatis 相关配置（mapper 路径、别名包等）&#10;- 开启调试模式并设置日志级别&#10;- 指定 Web 应用类型为 reactive（用于网关服务）" />
     <MESSAGE value="feat(user): 重构用户登录逻辑并支持权限跳转&#10;&#10;- 修改 IUserService 接口，将 login 方法参数改为用户名和密码，返回 UserEntity 对象&#10;- 更新 UserController 使用 @Controller 注解，并根据用户权限码跳转不同页面&#10;- 调整 UserMapper 的 login 方法，通过注解实现 SQL 查询并返回完整用户信息&#10;- UserServiceImpl 中重新实现 login 逻辑，直接返回查询结果供控制器判断权限&#10;- 引入 HttpSession 用于存储登录用户信息&#10;- 修复断点位置因代码结构调整后产生的行号偏移问题" />
     <MESSAGE value="feat(inventory): 初始化库存服务模块&#10;&#10;- 新增管理员火车控制器，用于查询车辆详情&#10;- 实现管理员火车服务接口及其实现类&#10;- 配置MyBatis映射文件位置和类型别名包&#10;- 启用服务注册与发现功能&#10;- 添加Nacos配置中心和服务发现配置&#10;- 更新项目编码配置，确保统一使用UTF-8&#10;- 调整编译器设置，加入新模块的编译参数&#10;- 删除旧版本依赖库配置信息&#10;- 增加跨域访问支持注释说明&#10;- 初始化应用启动类并扫描Mapper组件" />
     <MESSAGE value="feat(config): 添加Nacos配置和MyBatis设置&#10;&#10;- 配置Spring Cloud应用名称为service-inventory&#10;- 设置Nacos配置服务器地址&#10;- 导入多个Nacos配置文件&#10;- 配置MyBatis的mapper位置和实体类别名&#10;- 启用下划线到驼峰命名转换&#10;- 设置Nacos客户端调试日志级别&#10;- 启用应用调试模式" />
@@ -460,6 +471,7 @@
     <MESSAGE value="feat(user): 实现修改用户乘车人管理功能" />
     <MESSAGE value="feat(user): 实现删除和批量删除用户乘车人管理功能" />
     <MESSAGE value="feat(ticket): 添加车票座位信息查询功能&#10;&#10;- 在 ITicketService 接口中新增 selectTicketMessages 方法&#10;- 在 TicketsController 中添加 /ticketMessages 端点处理座位信息查询&#10;- 在 TicketServiceImpl 中实现座位信息查询的业务逻辑&#10;- 在 TicketsMapper 中添加查询车票座位信息的 SQL 映射&#10;- 添加参数验证和错误处理机制" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(ticket): 添加车票座位信息查询功能&#10;&#10;- 在 ITicketService 接口中新增 selectTicketMessages 方法&#10;- 在 TicketsController 中添加 /ticketMessages 端点处理座位信息查询&#10;- 在 TicketServiceImpl 中实现座位信息查询的业务逻辑&#10;- 在 TicketsMapper 中添加查询车票座位信息的 SQL 映射&#10;- 添加参数验证和错误处理机制" />
+    <MESSAGE value="feat(order): 添加订单服务模块&#10;&#10;- 创建 ticketing-system-order 模块并配置 pom.xml 依赖&#10;- 添加 OrderApplication 主启动类和相关配置&#10;- 创建订单创建相关的 Controller、Service、Mapper 基础结构&#10;- 配置 application.yaml 应用配置和 Nacos 集成&#10;- 更新项目编译配置和编码设置以支持新模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(order): 添加订单服务模块&#10;&#10;- 创建 ticketing-system-order 模块并配置 pom.xml 依赖&#10;- 添加 OrderApplication 主启动类和相关配置&#10;- 创建订单创建相关的 Controller、Service、Mapper 基础结构&#10;- 配置 application.yaml 应用配置和 Nacos 集成&#10;- 更新项目编译配置和编码设置以支持新模块" />
   </component>
 </project>

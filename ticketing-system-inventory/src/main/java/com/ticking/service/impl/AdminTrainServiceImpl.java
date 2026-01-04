@@ -135,7 +135,7 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                         }
                     }
                     // 将座位数量和类型存储到Redis中
-                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i);
                     Map<String, Object> seatInfo = new HashMap<>();
                     seatInfo.put("totalSeats", 118);
                     seatInfo.put("seatType", "硬座");
@@ -158,7 +158,7 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                         }
                     }
                     // 将座位数量和类型存储到Redis中
-                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i);
                     Map<String, Object> seatInfo = new HashMap<>();
                     seatInfo.put("totalSeats", 66);
                     seatInfo.put("seatType", "硬卧");
@@ -181,7 +181,7 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                         }
                     }
                     // 将座位数量和类型存储到Redis中
-                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i);
                     Map<String, Object> seatInfo = new HashMap<>();
                     seatInfo.put("totalSeats", 36);
                     seatInfo.put("seatType", "软卧");
@@ -255,7 +255,7 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                         }
                     }
                     // 将座位数量和类型存储到Redis中
-                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i);
                     Map<String, Object> seatInfo = new HashMap<>();
                     seatInfo.put("totalSeats", 21); // 7 * 3 = 21个座位
                     seatInfo.put("seatType", "商务座");
@@ -282,7 +282,7 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                         }
                     }
                     // 将座位数量和类型存储到Redis中
-                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i);
                     Map<String, Object> seatInfo = new HashMap<>();
                     seatInfo.put("totalSeats", 70); // 14 * 5 = 70个座位
                     seatInfo.put("seatType", "二等座");
@@ -309,7 +309,7 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                         }
                     }
                     // 将座位数量和类型存储到Redis中
-                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i);
                     Map<String, Object> seatInfo = new HashMap<>();
                     seatInfo.put("totalSeats", 50); // 10 * 5 = 50个座位
                     seatInfo.put("seatType", "一等座");

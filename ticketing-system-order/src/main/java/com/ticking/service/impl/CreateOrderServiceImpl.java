@@ -2,6 +2,7 @@ package com.ticking.service.impl;
 
 import com.ticking.entity.TicketItem;
 import com.ticking.entity.TrainTicketDTO;
+import com.ticking.entity.UserEntity;
 import com.ticking.mapper.CreateOrderMapper;
 import com.ticking.service.ICreateOrderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,5 +25,9 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
         List<TicketItem> ticketList = trainTicketDTO.getTicketList();
         Long trainId = Long.valueOf(trainIds);
         return false;
+    }
+    @Override
+    public UserEntity getUserById(Long userId) {
+        return createOrderMapper.selectById(userId);
     }
 }

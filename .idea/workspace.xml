@@ -5,20 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="refactor(inventory): 优化Redis缓存键名结构&#10;&#10;- 移除座位信息缓存键名中的多余&quot;:seats&quot;后缀&#10;- 统一所有座位类型(硬座、硬卧、软卧、商务座、二等座、一等座)的Redis键名格式&#10;- 简化缓存键名以提高缓存管理效率&#10;- 清理IDEA工作区中的Redis配置变更记录&#10;- 更新工作项持续时间记录">
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/config/InterceptorConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/entity/RestUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/entity/TicketItem.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/entity/TrainTicketDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/entity/UserEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/until/AuthInterceptor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/until/JwtUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/until/SnowflakeIdWorker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-order/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/controller/CreateOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/controller/CreateOrderController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/until/RedisUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/config/InterceptorConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/config/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/config/RedisConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/mapper/CreateOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/mapper/CreateOrderMapper.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/ICreateOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/ICreateOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/impl/CreateOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/impl/CreateOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/until/RedisUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/until/AuthInterceptor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/until/JwtUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/until/RedisUtil.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

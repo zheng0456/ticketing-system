@@ -8,6 +8,7 @@ import com.ticking.mapper.AdminTrainMapper;
 import com.ticking.mapper.TicketMapper;
 import com.ticking.service.IAdminTrainService;
 import com.ticking.until.TimeCalculationExample;
+import com.ticking.until.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -20,6 +21,8 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
     AdminTrainMapper adminTrainMapper;
     @Autowired
     TicketMapper ticketMapper;
+    @Autowired
+    private RedisUtil redisUtil;
     /**
      * 查询车次信息
      */
@@ -131,6 +134,13 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                             result1 = false;
                         }
                     }
+                    // 将座位数量和类型存储到Redis中
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    Map<String, Object> seatInfo = new HashMap<>();
+                    seatInfo.put("totalSeats", 118);
+                    seatInfo.put("seatType", "硬座");
+                    seatInfo.put("carriageId", TrainCarriageID+i);
+                    redisUtil.hmset(seatRedisKey, seatInfo);
                 }
             }
             for (int i = 0; i < hardSleeperCarriages; i++) {
@@ -147,6 +157,13 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                             result2 = false;
                         }
                     }
+                    // 将座位数量和类型存储到Redis中
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    Map<String, Object> seatInfo = new HashMap<>();
+                    seatInfo.put("totalSeats", 66);
+                    seatInfo.put("seatType", "硬卧");
+                    seatInfo.put("carriageId", TrainCarriageID+i);
+                    redisUtil.hmset(seatRedisKey, seatInfo);
                 }
             }
             for (int i = 0; i < softSleeperCarriages; i++) {
@@ -163,6 +180,13 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                             result3 = false;
                         }
                     }
+                    // 将座位数量和类型存储到Redis中
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    Map<String, Object> seatInfo = new HashMap<>();
+                    seatInfo.put("totalSeats", 36);
+                    seatInfo.put("seatType", "软卧");
+                    seatInfo.put("carriageId", TrainCarriageID+i);
+                    redisUtil.hmset(seatRedisKey, seatInfo);
                 }
             }
             if (result1 && result2 && result3) {
@@ -230,6 +254,13 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                             }
                         }
                     }
+                    // 将座位数量和类型存储到Redis中
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    Map<String, Object> seatInfo = new HashMap<>();
+                    seatInfo.put("totalSeats", 21); // 7 * 3 = 21个座位
+                    seatInfo.put("seatType", "商务座");
+                    seatInfo.put("carriageId", TrainCarriageID+i);
+                    redisUtil.hmset(seatRedisKey, seatInfo);
                 }
             }
             for (int i = 0; i < secondClassCarriages; i++) {
@@ -250,6 +281,13 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                             }
                         }
                     }
+                    // 将座位数量和类型存储到Redis中
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    Map<String, Object> seatInfo = new HashMap<>();
+                    seatInfo.put("totalSeats", 70); // 14 * 5 = 70个座位
+                    seatInfo.put("seatType", "二等座");
+                    seatInfo.put("carriageId", TrainCarriageID+i);
+                    redisUtil.hmset(seatRedisKey, seatInfo);
                 }
             }
             for (int i = 0; i < firstClassCarriages; i++) {
@@ -270,6 +308,13 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
                             }
                         }
                     }
+                    // 将座位数量和类型存储到Redis中
+                    String seatRedisKey = "train:" + id + ":carriage:" + (TrainCarriageID+i) + ":seats";
+                    Map<String, Object> seatInfo = new HashMap<>();
+                    seatInfo.put("totalSeats", 50); // 10 * 5 = 50个座位
+                    seatInfo.put("seatType", "一等座");
+                    seatInfo.put("carriageId", TrainCarriageID+i);
+                    redisUtil.hmset(seatRedisKey, seatInfo);
                 }
             }
             

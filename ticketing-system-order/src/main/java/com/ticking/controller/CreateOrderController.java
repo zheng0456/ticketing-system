@@ -5,6 +5,7 @@ import com.ticking.entity.RestUtil;
 import com.ticking.entity.TrainTicketDTO;
 import com.ticking.entity.UserEntity;
 import com.ticking.service.ICreateOrderService;
+import com.ticking.utility.UserUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -22,12 +23,11 @@ public class CreateOrderController {
      */
     @PostMapping("/createOrder")
     public RestUtil createOrder(@RequestBody TrainTicketDTO trainTicketDTO, HttpServletRequest request) {
-        UserEntity user = (UserEntity) request.getAttribute("currentUser");
-        if (user == null) {
+        Long userId = UserUtil.getCurrentUserId(request);
+        if (userId == null) {
             return RestUtil.error("未登录或登录已过期");
         }
-        Long userId = user.getUserId();
-        boolean result =createOrderService.createOrder(trainTicketDTO);
+        boolean result =createOrderService.createOrder(trainTicketDTO,userId);
         if (result == true) {
             return RestUtil.success();
         } else {

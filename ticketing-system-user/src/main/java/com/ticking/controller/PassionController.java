@@ -5,6 +5,7 @@ import com.ticking.entity.RestUtil;
 import com.ticking.entity.UserEntity;
 import com.ticking.service.IPassionService;
 import com.ticking.utility.LongObject;
+import com.ticking.utility.UserUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -25,11 +26,10 @@ public class PassionController {
      */
     @PostMapping("/passenger/list")
     public @ResponseBody RestUtil queryPassion(HttpServletRequest request) {
-        UserEntity user = (UserEntity) request.getAttribute("currentUser");
-        if (user == null) {
+        Long userId = UserUtil.getCurrentUserId(request);
+        if (userId == null) {
             return RestUtil.error("未登录或登录已过期");
         }
-        Long userId = user.getUserId();
         List<PassionEntity> data = passionService.queryPassion(userId);
         return RestUtil.success(data);
     }
@@ -39,11 +39,10 @@ public class PassionController {
      */
     @PostMapping("/passenger/add")
     public @ResponseBody RestUtil addPassion(@RequestBody PassionEntity passion, HttpServletRequest request) {
-        UserEntity user = (UserEntity) request.getAttribute("currentUser");
-        if (user == null) {
+        Long userId = UserUtil.getCurrentUserId(request);
+        if (userId == null) {
             return RestUtil.error("未登录或登录已过期");
         }
-        Long userId = user.getUserId();
         // 设置passion对象的userId，以便关联到当前用户
         passion.setUserId(userId);
         Boolean result = passionService.addPassion(passion);

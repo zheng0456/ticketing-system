@@ -16,7 +16,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
     public void addInterceptors(InterceptorRegistry registry) {
         // 添加认证拦截器，对需要认证的路径进行拦截
         registry.addInterceptor(authInterceptor)
-                .addPathPatterns("/passion/**", "/passenger/**", "/getCurrentUser")  // 需要认证的路径
+                .addPathPatterns("/passion/**", "/passenger/**", "/getCurrentUser", "/getCurrentUserId")  // 需要认证的路径
                 .excludePathPatterns("/login", "/register");  // 不需要认证的路径
     }
 }

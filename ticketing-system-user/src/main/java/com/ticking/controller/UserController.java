@@ -62,6 +62,20 @@ public class UserController {
     }
 
     /**
+     * 获取当前用户ID
+     */
+    @PostMapping("/getCurrentUserId")
+    public @ResponseBody RestUtil getCurrentUserId(HttpServletRequest request) {
+        // 从request中获取通过拦截器设置的当前用户信息
+        UserEntity currentUser = (UserEntity) request.getAttribute("currentUser");
+        if (currentUser != null) {
+            return RestUtil.success(currentUser.getUserId());
+        } else {
+            return RestUtil.error("未登录");
+        }
+    }
+
+    /**
      * 注册
      */
     @PostMapping("/register")

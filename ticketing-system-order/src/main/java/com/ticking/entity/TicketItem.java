@@ -13,6 +13,7 @@ import java.math.BigDecimal;
 @Data
 public class TicketItem {
     private Long id;
+    private String idNumber;
     private String departureStationId;
     private String arrivalStationId;
     private String ticketType;

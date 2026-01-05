@@ -11,8 +11,6 @@ import com.ticking.utility.SnowflakeIdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Random;
 
@@ -32,21 +30,13 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
         List<TicketItem> ticketList = trainTicketDTO.getTicketList();
         Long trainId = Long.valueOf(trainIds);   // 获取车次ID
         for (TicketItem ticketItem : ticketList){
-            String seatType = ticketItem.getSeatType();
-            String seatNo = "%"+ticketItem.getSeat()+"%";
-            List<SeatMessageEntity> seats =createOrderMapper.selectSeats(trainId,seatType,seatNo);
-            // 随机选择一个座位
-            if (seats != null && !seats.isEmpty()) {
-                Random random = new Random();
-                int randomIndex = random.nextInt(seats.size());
-                SeatMessageEntity selectedSeat = seats.get(randomIndex);
-                result=createOrders(userId,trainId,trainTicketDTO,selectedSeat.getCarriageId(),selectedSeat.getSeatId(),selectedSeat.getSeatNo());
-            }
+
         }
+        result=createOrders(userId,trainId,trainTicketDTO);
         return result;
     }
 
-    private boolean createOrders(Long userId, Long trainId, TrainTicketDTO trainTicketDTO, Long carriageId, Long seatId, String seatNo) {
+    private boolean createOrders(Long userId, Long trainId, TrainTicketDTO trainTicketDTO) {
         Boolean order=false;
         SnowflakeIdWorker snowflakeIdWorker = new SnowflakeIdWorker();
         // 在方法中添加时间获取
@@ -61,7 +51,17 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
             Long endStationId = Long.valueOf(arrivalStationId);
             String departureStationId = ticketItem.getDepartureStationId();
             Long startStationId = Long.valueOf(departureStationId);
-            order = createOrderMapper.createOrder(orderId,orderNo, userId, trainId,startStationId, endStationId, ticketItem.getTicketType(), ticketItem.getPrice(), ticketItem.getIdNumber(), carriageId, seatId, seatNo, createTime, payDeadline);
+
+            String seatType = ticketItem.getSeatType();
+            String seatNo = "%"+ticketItem.getSeat()+"%";
+            List<SeatMessageEntity> seats =createOrderMapper.selectSeats(trainId,seatType,seatNo);
+            // 随机选择一个座位
+            if (seats != null && !seats.isEmpty()) {
+                Random random = new Random();
+                int randomIndex = random.nextInt(seats.size());
+                SeatMessageEntity selectedSeat = seats.get(randomIndex);
+                order = createOrderMapper.createOrder(orderId,orderNo, userId, trainId,startStationId, endStationId, ticketItem.getTicketType(), ticketItem.getPrice(), ticketItem.getIdNumber(), selectedSeat.getCarriageId(), selectedSeat.getSeatId(), selectedSeat.getSeatNo(), createTime, payDeadline);
+            }
         }
         return order;
     }

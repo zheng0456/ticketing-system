@@ -3,7 +3,6 @@ package com.ticking.controller;
 
 import com.ticking.entity.RestUtil;
 import com.ticking.entity.TrainTicketDTO;
-import com.ticking.entity.UserEntity;
 import com.ticking.service.ICreateOrderService;
 import com.ticking.utility.UserUtil;
 import jakarta.servlet.http.HttpServletRequest;
@@ -11,8 +10,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.util.Map;
 
 @Controller
 public class CreateOrderController {
@@ -21,8 +20,8 @@ public class CreateOrderController {
     /**
      * 创建订单
      */
-    @PostMapping("/train/createOrder")
-    public RestUtil createOrder(@RequestBody TrainTicketDTO trainTicketDTO, HttpServletRequest request) {
+    @PostMapping("/trainOrder/createOrder")
+    public @ResponseBody RestUtil createOrder(@RequestBody TrainTicketDTO trainTicketDTO, HttpServletRequest request) {
         Long userId = UserUtil.getCurrentUserId(request);
         if (userId == null) {
             return RestUtil.error("未登录或登录已过期");

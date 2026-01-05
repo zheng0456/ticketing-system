@@ -27,6 +27,7 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
      */
     @Override
     public boolean createOrder(TrainTicketDTO trainTicketDTO, Long userId) {
+        boolean result = false;
         String trainIds = trainTicketDTO.getTrainId();
         List<TicketItem> ticketList = trainTicketDTO.getTicketList();
         Long trainId = Long.valueOf(trainIds);   // 获取车次ID
@@ -39,13 +40,13 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
                 Random random = new Random();
                 int randomIndex = random.nextInt(seats.size());
                 SeatMessageEntity selectedSeat = seats.get(randomIndex);
-                createOrders(userId,trainId,trainTicketDTO,selectedSeat.getCarriageId(),selectedSeat.getSeatId(),selectedSeat.getSeatNo());
+                result=createOrders(userId,trainId,trainTicketDTO,selectedSeat.getCarriageId(),selectedSeat.getSeatId(),selectedSeat.getSeatNo());
             }
         }
-        return false;
+        return result;
     }
 
-    private void createOrders(Long userId, Long trainId, TrainTicketDTO trainTicketDTO, Long carriageId, Long seatId, String seatNo) {
+    private boolean createOrders(Long userId, Long trainId, TrainTicketDTO trainTicketDTO, Long carriageId, Long seatId, String seatNo) {
         Boolean order=false;
         SnowflakeIdWorker snowflakeIdWorker = new SnowflakeIdWorker();
         // 在方法中添加时间获取
@@ -61,9 +62,7 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
             String departureStationId = ticketItem.getDepartureStationId();
             Long startStationId = Long.valueOf(departureStationId);
             order = createOrderMapper.createOrder(orderId,orderNo, userId, trainId,startStationId, endStationId, ticketItem.getTicketType(), ticketItem.getPrice(), ticketItem.getIdNumber(), carriageId, seatId, seatNo, createTime, payDeadline);
-            if (order==false){
-                throw new RuntimeException("创建订单失败");
-            }
         }
+        return order;
     }
 }

@@ -14,6 +14,7 @@
         <module>ticketing-system-inventory</module>
         <module>ticketing-system-product</module>
         <module>ticketing-system-order</module>
+        <module>ticketing-system-payment</module>
     </modules>
 
     <!-- Spring Boot 版本管理 -->

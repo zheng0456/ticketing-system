@@ -11,6 +11,7 @@
         <module name="ticketing-system-product" />
         <module name="ticketing-system-inventory" />
         <module name="ticketing-system-user" />
+        <module name="ticketing-system-payment" />
         <module name="ticketing-system-order" />
       </profile>
     </annotationProcessing>
@@ -25,6 +26,7 @@
       <module name="ticketing-system-gateway" options="-parameters" />
       <module name="ticketing-system-inventory" options="-parameters" />
       <module name="ticketing-system-order" options="-parameters" />
+      <module name="ticketing-system-payment" options="-parameters" />
       <module name="ticketing-system-product" options="-parameters" />
       <module name="ticketing-system-user" options="-parameters" />
     </option>

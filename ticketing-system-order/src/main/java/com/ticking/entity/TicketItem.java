@@ -18,4 +18,6 @@ public class TicketItem {
     private String arrivalStationId;
     private String ticketType;
     private BigDecimal price;
+    private String seat;
+    private String seatType;
 }

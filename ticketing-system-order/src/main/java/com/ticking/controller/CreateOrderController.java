@@ -21,7 +21,7 @@ public class CreateOrderController {
     /**
      * 创建订单
      */
-    @PostMapping("/createOrder")
+    @PostMapping("/train/createOrder")
     public RestUtil createOrder(@RequestBody TrainTicketDTO trainTicketDTO, HttpServletRequest request) {
         Long userId = UserUtil.getCurrentUserId(request);
         if (userId == null) {

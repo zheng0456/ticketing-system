@@ -4,19 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="refactor(order): 重构订单模块的用户认证和数据访问功能&#10;&#10;- 移除AuthInterceptor拦截器类及其相关配置&#10;- 移除JwtUtil工具类和RedisConfig配置类&#10;- 在CreateOrderMapper中添加用户信息查询方法&#10;- 在CreateOrderService中添加获取用户信息的接口方法&#10;- 实现用户信息查询功能并更新订单服务实现&#10;- 调整AdminTrainServiceImpl中的导入顺序&#10;- 清理RedisUtil等工具类的冗余代码">
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/until/SelectedSeats.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ticketing-system-product/src/main/java/com/ticking/until/SnowflakeIdWorker.java" afterDir="false" />
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="refactor(order): 重构订单模块用户认证和订单创建功能&#10;&#10;- 使用UserUtil工具类统一获取当前用户ID，替换原有的手动获取方式&#10;- 在CreateOrderMapper中添加查询座位信息和创建订单的数据库操作方法&#10;- 实现选座信息解析功能，新增SelectedSeats工具类处理座位选择逻辑&#10;- 集成雪花算法生成订单ID，新增SnowflakeIdWorker工具类保证订单ID唯一性&#10;- 重构CreateOrderService实现类，添加userId参数并实现完整的订单创建流程&#10;- 在用户模块中添加获取当前用户ID的接口，更新拦截器配置支持新接口&#10;- 新增SeatMessageEntity实体类用于座位信息管理，完善TicketItem实体类结构">
+      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/until/CurrentTime.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/until/OrderNoGenerator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/controller/CreateOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/controller/CreateOrderController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/entity/TicketItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/entity/TicketItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/entity/TrainTicketDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/entity/TrainTicketDTO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/mapper/CreateOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/mapper/CreateOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/ICreateOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/ICreateOrderService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/impl/CreateOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/impl/CreateOrderServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/config/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/config/InterceptorConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/PassionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/PassionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-user/ticketing-system-user.iml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/ticketing-system-user.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/until/SelectedSeats.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -211,7 +208,7 @@
       <workItem from="1767489801634" duration="8935000" />
       <workItem from="1767508113578" duration="7072000" />
       <workItem from="1767524769465" duration="33000" />
-      <workItem from="1767573581862" duration="4810000" />
+      <workItem from="1767573581862" duration="9346000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -458,7 +455,14 @@
       <option name="project" value="LOCAL" />
       <updated>1767530404173</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="refactor(order): 重构订单模块用户认证和订单创建功能&#10;&#10;- 使用UserUtil工具类统一获取当前用户ID，替换原有的手动获取方式&#10;- 在CreateOrderMapper中添加查询座位信息和创建订单的数据库操作方法&#10;- 实现选座信息解析功能，新增SelectedSeats工具类处理座位选择逻辑&#10;- 集成雪花算法生成订单ID，新增SnowflakeIdWorker工具类保证订单ID唯一性&#10;- 重构CreateOrderService实现类，添加userId参数并实现完整的订单创建流程&#10;- 在用户模块中添加获取当前用户ID的接口，更新拦截器配置支持新接口&#10;- 新增SeatMessageEntity实体类用于座位信息管理，完善TicketItem实体类结构">
+      <created>1767578934083</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1767578934083</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,7 +480,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(train-station): 实现车次站点修改功能&#10;&#10;- 在控制器中添加 PUT 接口用于更新车次站点信息&#10;- 实现服务层更新车次站点的业务逻辑&#10;- 使用 MyBatis 注解配置更新 SQL 语句&#10;- 扩展接口参数支持接收站点名称、省份、城市等字段&#10;- 完善数据校验与错误处理机制" />
     <MESSAGE value="feat(train-station): 实现车次站点删除功能&#10;&#10;- 在控制器中添加单个和批量删除车次站点的 DELETE 接口&#10;- 实现服务层删除车次站点的业务逻辑&#10;- 使用 MyBatis 注解配置删除 SQL 语句&#10;- 完善删除操作的数据校验与错误处理机制&#10;- 更新 Mapper 接口以支持删除操作&#10;- 扩展服务接口以支持批量删除功能" />
     <MESSAGE value="refactor(config): 移除重复的应用配置文件&#10;&#10;- 删除了gateway模块中冗余的application.yaml配置&#10;- 清理了inventory服务中重复的配置项&#10;- 移除了user服务中的重复配置文件&#10;- 统一了Nacos配置中心的引用方式&#10;- 简化了MyBatis相关配置的重复定义&#10;- 集中管理了日志级别和调试配置" />
     <MESSAGE value="feat(train): 实现车次信息添加功能&#10;&#10;- 在控制器中添加 POST 接口用于新增车次信息&#10;- 实现服务层添加车次及车厢座位的业务逻辑&#10;- 使用 MyBatis 注解配置插入 SQL 语句&#10;- 支持普通列车和高铁的不同车厢座位配置&#10;- 添加随机数生成车厢编号的逻辑&#10;- 完善数据校验与错误处理机制" />
@@ -501,7 +504,8 @@
     <MESSAGE value="refactor(train): 优化Redis缓存键结构&#10;&#10;- 移除座位信息Redis键中的冗余&quot;:seats&quot;后缀&#10;- 简化硬座、硬卧、软卧、商务座、二等座、一等座的缓存键格式&#10;- 更新AdminTrainServiceImpl中的Redis存储逻辑&#10;- 调整工作项持续时间记录" />
     <MESSAGE value="refactor(inventory): 优化Redis缓存键名结构&#10;&#10;- 移除座位信息缓存键名中的多余&quot;:seats&quot;后缀&#10;- 统一所有座位类型(硬座、硬卧、软卧、商务座、二等座、一等座)的Redis键名格式&#10;- 简化缓存键名以提高缓存管理效率&#10;- 清理IDEA工作区中的Redis配置变更记录&#10;- 更新工作项持续时间记录" />
     <MESSAGE value="refactor(order): 重构订单模块的用户认证和数据访问功能&#10;&#10;- 移除AuthInterceptor拦截器类及其相关配置&#10;- 移除JwtUtil工具类和RedisConfig配置类&#10;- 在CreateOrderMapper中添加用户信息查询方法&#10;- 在CreateOrderService中添加获取用户信息的接口方法&#10;- 实现用户信息查询功能并更新订单服务实现&#10;- 调整AdminTrainServiceImpl中的导入顺序&#10;- 清理RedisUtil等工具类的冗余代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor(order): 重构订单模块的用户认证和数据访问功能&#10;&#10;- 移除AuthInterceptor拦截器类及其相关配置&#10;- 移除JwtUtil工具类和RedisConfig配置类&#10;- 在CreateOrderMapper中添加用户信息查询方法&#10;- 在CreateOrderService中添加获取用户信息的接口方法&#10;- 实现用户信息查询功能并更新订单服务实现&#10;- 调整AdminTrainServiceImpl中的导入顺序&#10;- 清理RedisUtil等工具类的冗余代码" />
+    <MESSAGE value="refactor(order): 重构订单模块用户认证和订单创建功能&#10;&#10;- 使用UserUtil工具类统一获取当前用户ID，替换原有的手动获取方式&#10;- 在CreateOrderMapper中添加查询座位信息和创建订单的数据库操作方法&#10;- 实现选座信息解析功能，新增SelectedSeats工具类处理座位选择逻辑&#10;- 集成雪花算法生成订单ID，新增SnowflakeIdWorker工具类保证订单ID唯一性&#10;- 重构CreateOrderService实现类，添加userId参数并实现完整的订单创建流程&#10;- 在用户模块中添加获取当前用户ID的接口，更新拦截器配置支持新接口&#10;- 新增SeatMessageEntity实体类用于座位信息管理，完善TicketItem实体类结构" />
+    <option name="LAST_COMMIT_MESSAGE" value="refactor(order): 重构订单模块用户认证和订单创建功能&#10;&#10;- 使用UserUtil工具类统一获取当前用户ID，替换原有的手动获取方式&#10;- 在CreateOrderMapper中添加查询座位信息和创建订单的数据库操作方法&#10;- 实现选座信息解析功能，新增SelectedSeats工具类处理座位选择逻辑&#10;- 集成雪花算法生成订单ID，新增SnowflakeIdWorker工具类保证订单ID唯一性&#10;- 重构CreateOrderService实现类，添加userId参数并实现完整的订单创建流程&#10;- 在用户模块中添加获取当前用户ID的接口，更新拦截器配置支持新接口&#10;- 新增SeatMessageEntity实体类用于座位信息管理，完善TicketItem实体类结构" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

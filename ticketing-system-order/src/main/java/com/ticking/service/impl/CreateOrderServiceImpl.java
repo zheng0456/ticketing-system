@@ -5,14 +5,16 @@ import com.ticking.entity.TicketItem;
 import com.ticking.entity.TrainTicketDTO;
 import com.ticking.mapper.CreateOrderMapper;
 import com.ticking.service.ICreateOrderService;
-import com.ticking.until.SelectedSeats;
+import com.ticking.until.CurrentTime;
+import com.ticking.until.OrderNoGenerator;
 import com.ticking.utility.SnowflakeIdWorker;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.HashMap;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
-import java.util.Map;
+import java.util.Random;
 
 @Service("createOrderService")
 public class CreateOrderServiceImpl implements ICreateOrderService {
@@ -26,25 +28,42 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
     @Override
     public boolean createOrder(TrainTicketDTO trainTicketDTO, Long userId) {
         String trainIds = trainTicketDTO.getTrainId();
-        String selectedSeats = trainTicketDTO.getSelectedSeats();
         List<TicketItem> ticketList = trainTicketDTO.getTicketList();
         Long trainId = Long.valueOf(trainIds);   // 获取车次ID
-        
-        // 解析座位信息
-        if (selectedSeats != null && !selectedSeats.isEmpty()) {
-            Map<String, String> seatInfoMap =new SelectedSeats().parseSelectedSeats(selectedSeats);
-            List<SeatMessageEntity> seats =createOrderMapper.selectSeats(trainId);
+        for (TicketItem ticketItem : ticketList){
+            String seatType = ticketItem.getSeatType();
+            String seatNo = "%"+ticketItem.getSeat()+"%";
+            List<SeatMessageEntity> seats =createOrderMapper.selectSeats(trainId,seatType,seatNo);
+            // 随机选择一个座位
+            if (seats != null && !seats.isEmpty()) {
+                Random random = new Random();
+                int randomIndex = random.nextInt(seats.size());
+                SeatMessageEntity selectedSeat = seats.get(randomIndex);
+                createOrders(userId,trainId,trainTicketDTO,selectedSeat.getCarriageId(),selectedSeat.getSeatId(),selectedSeat.getSeatNo());
+            }
         }
-
-        createOrders(userId,trainId,trainTicketDTO);
         return false;
     }
 
-    private void createOrders(Long userId, Long trainId, TrainTicketDTO trainTicketDTO) {
+    private void createOrders(Long userId, Long trainId, TrainTicketDTO trainTicketDTO, Long carriageId, Long seatId, String seatNo) {
+        Boolean order=false;
         SnowflakeIdWorker snowflakeIdWorker = new SnowflakeIdWorker();
+        // 在方法中添加时间获取
+        String createTime = CurrentTime.createCurrentTime();
+        // 获取当前时间并加30分钟 为订单自动消除时间
+        String payDeadline = CurrentTime.afterTime();
+
+        String orderNo = "T"+OrderNoGenerator.generateOrderNo();
         for (TicketItem ticketItem : trainTicketDTO.getTicketList()){
             Long orderId = snowflakeIdWorker.nextId();
-            createOrderMapper.createOrder(orderId,userId,trainId,ticketItem.getTicketType(),ticketItem.getPrice(),ticketItem.getIdNumber());
+            String arrivalStationId = ticketItem.getArrivalStationId();
+            Long endStationId = Long.valueOf(arrivalStationId);
+            String departureStationId = ticketItem.getDepartureStationId();
+            Long startStationId = Long.valueOf(departureStationId);
+            order = createOrderMapper.createOrder(orderId,orderNo, userId, trainId,startStationId, endStationId, ticketItem.getTicketType(), ticketItem.getPrice(), ticketItem.getIdNumber(), carriageId, seatId, seatNo, createTime, payDeadline);
+            if (order==false){
+                throw new RuntimeException("创建订单失败");
+            }
         }
     }
 }

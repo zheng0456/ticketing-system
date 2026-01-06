@@ -4,10 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(order): 优化订单创建接口返回订单号并修复选座逻辑&#10;&#10;- 修改CreateOrderController返回订单号而非布尔值&#10;- 更新createOrderService接口返回类型为String&#10;- 修复CreateOrderMapper中payTime字段名为payDeadline&#10;- 重构CreateOrderServiceImpl中订单创建逻辑返回订单号&#10;- 添加OrderMessageEntity实体类&#10;- 更新IDEA工作区配置文件中的任务记录">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/resources/application.yaml" afterDir="false" />
-    </list>
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(order): 配置RocketMQ消息流并优化订单创建接口&#10;&#10;- 配置application.yaml中RocketMQ的binder和消息通道&#10;- 定义order-topic的输入输出绑定配置&#10;- 修改CreateOrderController返回订单号而非布尔值&#10;- 更新createOrderService接口返回类型为String&#10;- 修复CreateOrderMapper中payTime字段名为payDeadline&#10;- 重构CreateOrderServiceImpl中订单创建逻辑返回订单号&#10;- 添加OrderMessageEntity实体类&#10;- 移除MyBatis配置中的多余空行&#10;- 更新IDEA工作区配置文件中的任务记录" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -490,7 +487,14 @@
       <option name="project" value="LOCAL" />
       <updated>1767612637698</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="feat(order): 配置RocketMQ消息流并优化订单创建接口&#10;&#10;- 配置application.yaml中RocketMQ的binder和消息通道&#10;- 定义order-topic的输入输出绑定配置&#10;- 修改CreateOrderController返回订单号而非布尔值&#10;- 更新createOrderService接口返回类型为String&#10;- 修复CreateOrderMapper中payTime字段名为payDeadline&#10;- 重构CreateOrderServiceImpl中订单创建逻辑返回订单号&#10;- 添加OrderMessageEntity实体类&#10;- 移除MyBatis配置中的多余空行&#10;- 更新IDEA工作区配置文件中的任务记录">
+      <created>1767677939497</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1767677939497</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -508,7 +512,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(train): 实现车次信息添加功能&#10;&#10;- 在控制器中添加 POST 接口用于新增车次信息&#10;- 实现服务层添加车次及车厢座位的业务逻辑&#10;- 使用 MyBatis 注解配置插入 SQL 语句&#10;- 支持普通列车和高铁的不同车厢座位配置&#10;- 添加随机数生成车厢编号的逻辑&#10;- 完善数据校验与错误处理机制&#10;- 引入雪花算法生成唯一 ID&#10;- 优化座位添加逻辑并支持多种座位类型&#10;- 添加事务管理确保数据一致性&#10;- 更新时间计算工具类并增强代码可读性" />
     <MESSAGE value="feat(train): 实现车次信息查询与修改功能&#10;&#10;- 在控制器中增加空数据判断，避免返回无效列表&#10;- 添加 PUT 接口用于修改车次信息&#10;- 优化 Mapper 层 SQL 查询语句，移除运营状态限制&#10;- 增加根据站点 ID 查询始发站和终点站名称的功能&#10;- 在实体类中新增出发站和到达站名称字段&#10;- 完善服务层查询逻辑，自动填充车站名称信息&#10;- 更新服务接口与实现类，支持车次信息更新操作" />
     <MESSAGE value="feat(train): 实现车次信息修改功能&#10;&#10;- 在 AdminTrainMapper 中添加 updateTrain 方法及对应 SQL 注解&#10;- 实现服务层 updateTrain 逻辑，解析并传递车次信息参数&#10;- 为 TrainEntity 添加 Jackson 序列化注解支持 Long 类型序列化&#10;- 补充相关导入语句与方法注释&#10;- 更新工作区配置与断点信息" />
     <MESSAGE value="feat(train): 实现车次信息删除功能&#10;&#10;- 在控制器中添加 POST 接口用于批量删除车次信息&#10;- 实现服务层删除逻辑，包括车次、车厢及座位信息的级联删除&#10;- 在 Mapper 层添加对应的删除 SQL 注解方法&#10;- 补充删除相关的方法注释与参数校验&#10;- 更新工作区配置与断点信息" />
@@ -533,7 +536,8 @@
     <MESSAGE value="refactor(order): 重构订单创建功能实现自动选座和订单管理&#10;&#10;- 修改CreateOrderController中创建订单接口路径为/train/createOrder&#10;- 在CreateOrderMapper中添加座位查询和订单创建的数据库操作方法&#10;- 实现自动选座逻辑，根据座位类型和座位号查询并随机选择可用座位&#10;- 添加CurrentTime和OrderNoGenerator工具类处理时间获取和订单编号生成&#10;- 更新TrainTicketDTO和TicketItem实体类结构，移除selectedSeats字段&#10;- 实现完整的订单创建流程，包含订单号生成、时间设置和数据库插入&#10;- 移除SelectedSeats工具类，重构选座信息处理逻辑" />
     <MESSAGE value="feat(payment): 添加支付模块基础配置和订单创建返回值修复&#10;&#10;- 新增ticketing-system-payment模块的application.yaml配置文件&#10;- 在IDEA配置文件中添加payment模块的编译和编码设置&#10;- 修复CreateOrderServiceImpl中createOrders方法的返回值逻辑&#10;- 在父pom.xml中添加payment模块的依赖管理&#10;- 移除用户模块中多余的注解生成源码路径配置&#10;- 更新workspace.xml中的项目结构和任务记录配置" />
     <MESSAGE value="feat(order): 实现订单创建功能的自动选座逻辑和接口优化&#10;&#10;- 修改CreateOrderController中创建订单接口路径为/trainOrder/createOrder&#10;- 添加ResponseBody注解支持接口响应&#10;- 移除UserEntity的多余导入&#10;- 修复CreateOrderMapper中座位查询SQL的字段名错误(seat改为seat_no)&#10;- 重构CreateOrderServiceImpl中的选座逻辑，将座位选择移到订单创建内部&#10;- 在InterceptorConfig中添加/trainOrder/**路径的认证拦截&#10;- 更新IDEA配置文件中的任务记录和运行配置" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(order): 实现订单创建功能的自动选座逻辑和接口优化&#10;&#10;- 修改CreateOrderController中创建订单接口路径为/trainOrder/createOrder&#10;- 添加ResponseBody注解支持接口响应&#10;- 移除UserEntity的多余导入&#10;- 修复CreateOrderMapper中座位查询SQL的字段名错误(seat改为seat_no)&#10;- 重构CreateOrderServiceImpl中的选座逻辑，将座位选择移到订单创建内部&#10;- 在InterceptorConfig中添加/trainOrder/**路径的认证拦截&#10;- 更新IDEA配置文件中的任务记录和运行配置" />
+    <MESSAGE value="feat(order): 配置RocketMQ消息流并优化订单创建接口&#10;&#10;- 配置application.yaml中RocketMQ的binder和消息通道&#10;- 定义order-topic的输入输出绑定配置&#10;- 修改CreateOrderController返回订单号而非布尔值&#10;- 更新createOrderService接口返回类型为String&#10;- 修复CreateOrderMapper中payTime字段名为payDeadline&#10;- 重构CreateOrderServiceImpl中订单创建逻辑返回订单号&#10;- 添加OrderMessageEntity实体类&#10;- 移除MyBatis配置中的多余空行&#10;- 更新IDEA工作区配置文件中的任务记录" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(order): 配置RocketMQ消息流并优化订单创建接口&#10;&#10;- 配置application.yaml中RocketMQ的binder和消息通道&#10;- 定义order-topic的输入输出绑定配置&#10;- 修改CreateOrderController返回订单号而非布尔值&#10;- 更新createOrderService接口返回类型为String&#10;- 修复CreateOrderMapper中payTime字段名为payDeadline&#10;- 重构CreateOrderServiceImpl中订单创建逻辑返回订单号&#10;- 添加OrderMessageEntity实体类&#10;- 移除MyBatis配置中的多余空行&#10;- 更新IDEA工作区配置文件中的任务记录" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(order): 实现订单创建功能的自动选座逻辑和接口优化&#10;&#10;- 修改CreateOrderController中创建订单接口路径为/trainOrder/createOrder&#10;- 添加ResponseBody注解支持接口响应&#10;- 移除UserEntity的多余导入&#10;- 修复CreateOrderMapper中座位查询SQL的字段名错误(seat改为seat_no)&#10;- 重构CreateOrderServiceImpl中的选座逻辑，将座位选择移到订单创建内部&#10;- 在InterceptorConfig中添加/trainOrder/**路径的认证拦截&#10;- 更新IDEA配置文件中的任务记录和运行配置">
-      <change afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/entity/OrderMessageEntity.java" afterDir="false" />
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(order): 优化订单创建接口返回订单号并修复选座逻辑&#10;&#10;- 修改CreateOrderController返回订单号而非布尔值&#10;- 更新createOrderService接口返回类型为String&#10;- 修复CreateOrderMapper中payTime字段名为payDeadline&#10;- 重构CreateOrderServiceImpl中订单创建逻辑返回订单号&#10;- 添加OrderMessageEntity实体类&#10;- 更新IDEA工作区配置文件中的任务记录">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/controller/CreateOrderController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/controller/CreateOrderController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/mapper/CreateOrderMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/mapper/CreateOrderMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/ICreateOrderService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/ICreateOrderService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/impl/CreateOrderServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/service/impl/CreateOrderServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-order/src/main/resources/application.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-order/src/main/resources/application.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

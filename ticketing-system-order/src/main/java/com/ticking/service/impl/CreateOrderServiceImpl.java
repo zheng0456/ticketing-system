@@ -24,8 +24,8 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
      * 创建订单
      */
     @Override
-    public boolean createOrder(TrainTicketDTO trainTicketDTO, Long userId) {
-        boolean result = false;
+    public String createOrder(TrainTicketDTO trainTicketDTO, Long userId) {
+        String result = null;
         String trainIds = trainTicketDTO.getTrainId();
         List<TicketItem> ticketList = trainTicketDTO.getTicketList();
         Long trainId = Long.valueOf(trainIds);   // 获取车次ID
@@ -36,7 +36,8 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
         return result;
     }
 
-    private boolean createOrders(Long userId, Long trainId, TrainTicketDTO trainTicketDTO) {
+
+    private String createOrders(Long userId, Long trainId, TrainTicketDTO trainTicketDTO) {
         Boolean order=false;
         SnowflakeIdWorker snowflakeIdWorker = new SnowflakeIdWorker();
         // 在方法中添加时间获取
@@ -45,6 +46,7 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
         String payDeadline = CurrentTime.afterTime();
 
         String orderNo = "T"+OrderNoGenerator.generateOrderNo();
+
         for (TicketItem ticketItem : trainTicketDTO.getTicketList()){
             Long orderId = snowflakeIdWorker.nextId();
             String arrivalStationId = ticketItem.getArrivalStationId();
@@ -53,16 +55,19 @@ public class CreateOrderServiceImpl implements ICreateOrderService {
             Long startStationId = Long.valueOf(departureStationId);
 
             String seatType = ticketItem.getSeatType();
-            String seatNo = "%"+ticketItem.getSeat()+"%";
-            List<SeatMessageEntity> seats =createOrderMapper.selectSeats(trainId,seatType,seatNo);
-            // 随机选择一个座位
-            if (seats != null && !seats.isEmpty()) {
+            String seatNoPattern = "%" + ticketItem.getSeat() + "%";
+            List<SeatMessageEntity> availableSeats = createOrderMapper.selectSeats(trainId, seatType, seatNoPattern);
+            // 随机选择一个可用座位
+            if (availableSeats != null && !availableSeats.isEmpty()) {
                 Random random = new Random();
-                int randomIndex = random.nextInt(seats.size());
-                SeatMessageEntity selectedSeat = seats.get(randomIndex);
-                order = createOrderMapper.createOrder(orderId,orderNo, userId, trainId,startStationId, endStationId, ticketItem.getTicketType(), ticketItem.getPrice(), ticketItem.getIdNumber(), selectedSeat.getCarriageId(), selectedSeat.getSeatId(), selectedSeat.getSeatNo(), createTime, payDeadline);
+                int randomIndex = random.nextInt(availableSeats.size());
+                SeatMessageEntity selectedSeat = availableSeats.get(randomIndex);
+                order = createOrderMapper.createOrder(orderId, orderNo, userId, trainId, startStationId, endStationId, ticketItem.getTicketType(), ticketItem.getPrice(), ticketItem.getIdNumber(), selectedSeat.getCarriageId(), selectedSeat.getSeatId(), selectedSeat.getSeatNo(), createTime, payDeadline);
+                if (order == false){
+                    return null;
+                }
             }
         }
-        return order;
+        return orderNo;
     }
 }

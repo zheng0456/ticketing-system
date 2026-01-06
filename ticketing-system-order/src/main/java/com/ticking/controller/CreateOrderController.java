@@ -26,9 +26,9 @@ public class CreateOrderController {
         if (userId == null) {
             return RestUtil.error("未登录或登录已过期");
         }
-        boolean result =createOrderService.createOrder(trainTicketDTO,userId);
-        if (result == true) {
-            return RestUtil.success();
+        String orderNo =createOrderService.createOrder(trainTicketDTO,userId);
+        if (!orderNo.isEmpty()) {
+            return RestUtil.success(orderNo);
         } else {
             return RestUtil.error("创建订单失败");
         }

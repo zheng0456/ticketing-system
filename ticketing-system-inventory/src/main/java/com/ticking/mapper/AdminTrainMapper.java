@@ -30,8 +30,8 @@ public interface AdminTrainMapper {
     /**
      * 添加座位信息
      */
-    @Insert("insert into train_seat(carriage_id,seat_no,seat_status) values(#{id},#{i},0)")
-    int addTrainSeat(Long id, String i);
+    @Insert("insert into train_seat(id,carriage_id,seat_no,seat_status) values(#{seatId},#{id},#{i},0)")
+    int addTrainSeat(Long seatId,Long id, String i);
 
     /**
      * 查询车次始发站名称信息 和 终点站名称信息

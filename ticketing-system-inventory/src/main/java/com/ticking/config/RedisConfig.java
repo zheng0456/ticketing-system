@@ -20,14 +20,20 @@ public class RedisConfig {
         RedisTemplate<String,Object> redisTemplate = new RedisTemplate<>();
         redisTemplate.setConnectionFactory(factory);
 
-        //指定kv的序列化方式
+        // 配置ObjectMapper
         ObjectMapper objectMapper = new ObjectMapper();
         objectMapper.setVisibility(PropertyAccessor.ALL, JsonAutoDetect.Visibility.ANY);
-        objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
-        redisTemplate.setKeySerializer(new StringRedisSerializer());
-        Jackson2JsonRedisSerializer jackson2JsonRedisSerializer = new Jackson2JsonRedisSerializer(objectMapper,Object.class);
-        redisTemplate.setValueSerializer(jackson2JsonRedisSerializer);
+        // 移除可能引起问题的类型信息存储
+        // objectMapper.enableDefaultTyping(ObjectMapper.DefaultTyping.NON_FINAL);
 
+        // 设置所有序列化器
+        redisTemplate.setKeySerializer(new StringRedisSerializer());
+        redisTemplate.setValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
+        // 重点：设置Hash的Key和Value序列化器
+        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+        redisTemplate.setHashValueSerializer(new GenericJackson2JsonRedisSerializer(objectMapper));
+
+        redisTemplate.afterPropertiesSet();
         return redisTemplate;
     }
     //配置Redis监听器容器工厂

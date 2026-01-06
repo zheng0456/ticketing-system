@@ -64,15 +64,34 @@ public class RedisUtil {
      * 删除缓存
      *
      * @param key 可以传一个值 或多个
+     * @return 删除的key的数量
      */
     @SuppressWarnings("unchecked")
-    public void del(String... key) {
+    public Long del(String... key) {
         if (key != null && key.length > 0) {
             if (key.length == 1) {
-                redisTemplate.delete(key[0]);
+                Boolean result = redisTemplate.delete(key[0]);
+                return result != null && result ? 1L : 0L;
             } else {
-                redisTemplate.delete((Collection<String>) CollectionUtils.arrayToList(key));
+                Collection<String> keyCollection = (Collection<String>) CollectionUtils.arrayToList(key);
+                return redisTemplate.delete(keyCollection);
             }
+        }
+        return 0L;
+    }
+
+    /**
+     * 根据pattern获取所有匹配的key
+     *
+     * @param pattern 模式匹配字符串
+     * @return 匹配的key集合
+     */
+    public Set<String> keys(String pattern) {
+        try {
+            return redisTemplate.keys(pattern);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
         }
     }
 

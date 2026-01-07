@@ -75,6 +75,7 @@ public class AdminTrainServiceImpl implements IAdminTrainService {
     @Override
     public Boolean deleteTrain(Long id) {
         Boolean result = adminTrainMapper.deleteTrain(id);
+        result=adminTrainMapper.deleteTrainTickets(id);
         if (result) {
             List<Long> carriageIDs = adminTrainMapper.selectTrainCarriagesID(id);
             for (Long carriageID : carriageIDs) {

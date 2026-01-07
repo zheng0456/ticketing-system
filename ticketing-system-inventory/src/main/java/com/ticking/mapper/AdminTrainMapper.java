@@ -86,4 +86,10 @@ public interface AdminTrainMapper {
      */
     @Select("SELECT DISTINCT * FROM train_carriage WHERE train_id= #{trainId}")
     List<TrainCarriageEntity> selectTrainCarriage(Long trainId);
+
+    /**
+     * 删除车票信息
+     */
+    @Delete("delete from ticket_price where train_id= #{id}")
+    Boolean deleteTrainTickets(Long id);
 }

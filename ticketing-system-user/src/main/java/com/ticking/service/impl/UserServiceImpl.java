@@ -3,6 +3,7 @@ package com.ticking.service.impl;
 import com.ticking.entity.MenuEntity;
 import com.ticking.entity.UserEntity;
 import com.ticking.mapper.MenuMapper;
+import com.ticking.mapper.PermissionMapper;
 import com.ticking.mapper.UserMapper;
 import com.ticking.service.IUserService;
 import com.ticking.utility.SnowflakeIdWorker;
@@ -20,6 +21,8 @@ public class UserServiceImpl  implements IUserService {
     UserMapper userMapper;
     @Autowired
     MenuMapper menuMapper;
+    @Autowired
+    PermissionMapper permissionMapper;
 
     /**
      * 登录
@@ -73,15 +76,8 @@ public class UserServiceImpl  implements IUserService {
     @Transactional
     public boolean deleteUser(Long userId) {
         boolean result=userMapper.deleteUser(userId);
-        if (result==true){
-            result = userMapper.deleteUserPassion(userId);
-            if (result==true){
-                //查询对应的role Id
-                Long roleId=userMapper.selectRoleId(userId);
-                result=userMapper.deleteUserRole(userId);
-                result=userMapper.deleteUserRoleMeau(roleId);
-            }
-        }
+        result=userMapper.deleteUserRole(userId);
+        result=userMapper.deleteUserPassion(userId);
         return result;
     }
 }

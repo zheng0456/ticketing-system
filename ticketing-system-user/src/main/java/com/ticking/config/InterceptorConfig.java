@@ -18,6 +18,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
         registry.addInterceptor(authInterceptor)
                 .addPathPatterns("/passion/**", "/passenger/**", "/getCurrentUser", "/getCurrentUserId")  // 需要认证的路径
                 .addPathPatterns("/trainOrder/**", "/trainOrder/**", "/getCurrentUser", "/getCurrentUserId")  //  需要认证的路径
+                 .addPathPatterns("/userLogOut/**", "/userLogOut/**", "/getCurrentUser", "/getCurrentUserId")
                 .excludePathPatterns("/login", "/register");  // 不需要认证的路径
     }
 }

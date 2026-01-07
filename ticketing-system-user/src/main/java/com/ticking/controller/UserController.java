@@ -87,4 +87,20 @@ public class UserController {
             return RestUtil.error("用户已存在");
         }
     }
+
+    /**
+     * 注销用户信息
+     */
+    @PostMapping("/userLogOut")
+    public @ResponseBody RestUtil userLogOut(HttpServletRequest request) {
+        // 从request中获取通过拦截器设置的当前用户信息
+        UserEntity currentUser = (UserEntity) request.getAttribute("currentUser");
+        Long userId = currentUser.getUserId();
+        boolean result = userService.deleteUser(userId);
+        if ( result){
+            return RestUtil.success();
+        }else {
+            return RestUtil.error("注销失败");
+        }
+    }
 }

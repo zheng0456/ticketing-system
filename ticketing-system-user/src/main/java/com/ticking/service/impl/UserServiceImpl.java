@@ -65,4 +65,23 @@ public class UserServiceImpl  implements IUserService {
     public UserEntity getUserById(Long userId) {
         return userMapper.selectById(userId);
     }
+
+    /**
+     * 删除用户
+     */
+    @Override
+    @Transactional
+    public boolean deleteUser(Long userId) {
+        boolean result=userMapper.deleteUser(userId);
+        if (result==true){
+            result = userMapper.deleteUserPassion(userId);
+            if (result==true){
+                //查询对应的role Id
+                Long roleId=userMapper.selectRoleId(userId);
+                result=userMapper.deleteUserRole(userId);
+                result=userMapper.deleteUserRoleMeau(roleId);
+            }
+        }
+        return result;
+    }
 }

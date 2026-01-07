@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 优化列车座位管理和Redis缓存策略&#10;&#10;- 修改AdminTrainMapper中addTrainSeat方法，添加座位ID参数并更新SQL插入语句&#10;- 在删除列车时增加Redis缓存清理逻辑，包括车厢座位和列车相关缓存&#10;- 添加deleteCarriageSeatCache和deleteTrainCache私有方法处理Redis缓存删除&#10;- 使用雪花算法生成座位ID，并在添加座位时同步存储座位信息到Redis&#10;- 移除座位统计缓存中多余的carriageId字段&#10;- 优化RedisConfig配置，使用GenericJackson2JsonRedisSerializer并设置Hash序列化器&#10;- 更新RedisUtil的del方法返回删除key的数量，新增keys方法支持模式匹配&#10;- 在IDEA工作区配置中记录相关变更和任务信息">
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/controller/AdminViewController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/mapper/AdminViewMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/IAdminViewService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminViewServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/PermissionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/PermissionEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/UserRoleEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/PermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IPermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/PermissionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-inventory/src/main/java/com/ticking/service/impl/AdminTrainServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +230,8 @@
       <workItem from="1767612301110" duration="6758000" />
       <workItem from="1767659998999" duration="347000" />
       <workItem from="1767689512152" duration="4208000" />
-      <workItem from="1767697690152" duration="1430000" />
+      <workItem from="1767697690152" duration="7496000" />
+      <workItem from="1767746140738" duration="8353000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -513,7 +527,14 @@
       <option name="project" value="LOCAL" />
       <updated>1767691042386</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="feat(train): 优化列车座位管理和Redis缓存策略&#10;&#10;- 修改AdminTrainMapper中addTrainSeat方法，添加座位ID参数并更新SQL插入语句&#10;- 在删除列车时增加Redis缓存清理逻辑，包括车厢座位和列车相关缓存&#10;- 添加deleteCarriageSeatCache和deleteTrainCache私有方法处理Redis缓存删除&#10;- 使用雪花算法生成座位ID，并在添加座位时同步存储座位信息到Redis&#10;- 移除座位统计缓存中多余的carriageId字段&#10;- 优化RedisConfig配置，使用GenericJackson2JsonRedisSerializer并设置Hash序列化器&#10;- 更新RedisUtil的del方法返回删除key的数量，新增keys方法支持模式匹配&#10;- 在IDEA工作区配置中记录相关变更和任务信息">
+      <created>1767699387252</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1767699387252</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,6 +591,11 @@
           <url>file://$PROJECT_DIR$/ticketing-system-order/src/main/java/com/ticking/controller/CreateOrderController.java</url>
           <line>30</line>
           <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/PermissionServiceImpl.java</url>
+          <line>42</line>
+          <option name="timeStamp" value="13" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

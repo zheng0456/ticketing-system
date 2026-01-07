@@ -12,4 +12,6 @@ public interface IUserService {
 
     List<MenuEntity> getMenuList(Long userId);
     UserEntity getUserById(Long userId);
+
+    boolean deleteUser(Long userId);
 }

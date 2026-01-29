@@ -1,6 +1,7 @@
 package com.ticking.service;
 
 import com.ticking.entity.MenuEntity;
+import com.ticking.entity.PersonMessageEntity;
 import com.ticking.entity.UserEntity;
 
 import java.util.List;
@@ -14,4 +15,8 @@ public interface IUserService {
     UserEntity getUserById(Long userId);
 
     boolean deleteUser(Long userId);
+
+    PersonMessageEntity selectPersonMessages(Long userId);
+
+    boolean updateUserMessages(PersonMessageEntity user);
 }

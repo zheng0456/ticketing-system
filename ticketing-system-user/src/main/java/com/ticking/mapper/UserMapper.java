@@ -1,10 +1,10 @@
 package com.ticking.mapper;
 
+import com.ticking.entity.PersonMessageEntity;
 import com.ticking.entity.UserEntity;
-import org.apache.ibatis.annotations.Delete;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
+
+import java.util.List;
 
 @Mapper
 public interface UserMapper {
@@ -43,4 +43,19 @@ public interface UserMapper {
 
     @Delete("DELETE FROM role_menu WHERE role_id = #{roleId}")
     boolean deleteUserRoleMeau(Long roleId);
+
+    @Select("SELECT * FROM user u left join user_id_card uid on u.user_id=uid.user_id WHERE u.user_id = #{userId}")
+    PersonMessageEntity selectPersonMessages(Long userId);
+
+    /**
+     * 修改用户信息
+     */
+    @Update("UPDATE user SET phone = #{phone},id_card=#{idCard},real_name=#{realName} WHERE user_id = #{userId}")
+    boolean updateUserMessages(Long userId, String phone, String idCard, String realName);
+
+    /**
+     * 修改用户身份证信息
+     */
+    @Insert("INSERT INTO user_id_card(user_id,card_type,card_id,phone,discount_type,name) VALUES (#{userId},#{cardType},#{idCard},#{phone},#{discountType},#{realName})")
+    boolean updateUserIdCard(Long userId, String cardType, String idCard, String realName, String discountType, String phone);
 }

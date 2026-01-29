@@ -1,6 +1,7 @@
 package com.ticking.service.impl;
 
 import com.ticking.entity.MenuEntity;
+import com.ticking.entity.PersonMessageEntity;
 import com.ticking.entity.UserEntity;
 import com.ticking.mapper.MenuMapper;
 import com.ticking.mapper.PermissionMapper;
@@ -78,6 +79,25 @@ public class UserServiceImpl  implements IUserService {
         boolean result=userMapper.deleteUser(userId);
         result=userMapper.deleteUserRole(userId);
         result=userMapper.deleteUserPassion(userId);
+        return result;
+    }
+
+    /**
+     * 查询用户信息
+     */
+    @Override
+    public PersonMessageEntity selectPersonMessages(Long userId) {
+        return userMapper.selectPersonMessages(userId);
+    }
+
+    /**
+     * 修改用户信息
+     */
+    @Override
+    public boolean updateUserMessages(PersonMessageEntity user) {
+        boolean result=false;
+        result=userMapper.updateUserMessages(user.getUserId(),user.getPhone(),user.getIdCard(),user.getRealName());
+        result=userMapper.updateUserIdCard(user.getUserId(),user.getCardType(),user.getIdCard(),user.getRealName(),user.getDiscountType(),user.getPhone());
         return result;
     }
 }

@@ -1,6 +1,7 @@
 package com.ticking.controller;
 
 import com.ticking.entity.MenuEntity;
+import com.ticking.entity.PersonMessageEntity;
 import com.ticking.entity.RestUtil;
 import com.ticking.entity.UserEntity;
 import com.ticking.service.IUserService;
@@ -101,6 +102,38 @@ public class UserController {
             return RestUtil.success();
         }else {
             return RestUtil.error("注销失败");
+        }
+    }
+    /**
+     * 获取用户个人信息
+     */
+    @PostMapping("/personMessages/list")
+    public @ResponseBody RestUtil personMessagesList(HttpServletRequest request) {
+        // 从request中获取通过拦截器设置的当前用户信息
+        UserEntity currentUser = (UserEntity) request.getAttribute("currentUser");
+        Long userId = currentUser.getUserId();
+        PersonMessageEntity user=userService.selectPersonMessages(userId);
+        if (user != null) {
+            return RestUtil.success(user);
+        } else {
+            return RestUtil.error("用户不存在");
+        }
+    }
+
+    /**
+     * 修改用户个人信息
+     */
+    @PostMapping("/personMessages/add")
+    public @ResponseBody RestUtil personMessagesAdd(@RequestBody PersonMessageEntity user, HttpServletRequest request) {
+        // 从request中获取通过拦截器设置的当前用户信息
+        UserEntity currentUser = (UserEntity) request.getAttribute("currentUser");
+        Long userId = currentUser.getUserId();
+        user.setUserId(userId);
+        boolean result = userService.updateUserMessages(user);
+        if (result) {
+            return RestUtil.success();
+        } else {
+            return RestUtil.error("修改失败");
         }
     }
 }

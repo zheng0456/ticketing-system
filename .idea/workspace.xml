@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(train): 添加删除列车车票信息功能&#10;&#10;- 在AdminTrainMapper中新增deleteTrainTickets方法用于删除指定列车的车票价格信息&#10;- 在AdminTrainServiceImpl的deleteTrain方法中调用deleteTrainTickets实现级联删除&#10;- 使用@Delete注解执行DELETE FROM ticket_price WHERE train_id条件删除">
+    <list default="true" id="519dffd0-e181-40f1-8d4e-e220b1ed9ac4" name="Changes" comment="feat(user): 添加用户登出接口并更新拦截器配置&#10;&#10;- 在InterceptorConfig中为/userLogOut/**路径添加认证拦截&#10;- 在UserServiceImpl中注入PermissionMapper依赖&#10;- 简化deleteUser方法的事务处理逻辑，移除冗余的角色菜单删除操作">
+      <change afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/entity/PersonMessageEntity.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/config/InterceptorConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/config/InterceptorConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/mapper/UserMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/IUserService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/service/impl/UserServiceImpl.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -221,7 +225,11 @@
       <workItem from="1767697690152" duration="7496000" />
       <workItem from="1767746140738" duration="12169000" />
       <workItem from="1767775837838" duration="3000" />
-      <workItem from="1767786461928" duration="613000" />
+      <workItem from="1767786461928" duration="4532000" />
+      <workItem from="1767873532904" duration="2594000" />
+      <workItem from="1767919240884" duration="45000" />
+      <workItem from="1767920148880" duration="3555000" />
+      <workItem from="1767947871575" duration="607000" />
     </task>
     <task id="LOCAL-00001" summary="refactor(project):重构项目配置与启动类&#10;&#10;- 更新 .idea/compiler.xml 配置以支持 Java 17 字节码目标&#10;- 将网关模块主类重命名为 GateWayApplication 并集成 Spring Boot 启动配置&#10;- 移除用户模块中冗余的 Spring Cloud Gateway 依赖- 在用户模块中启用服务注册与发现功能&#10;- 更新 IDEA 工作区设置，包括 Maven 导入偏好和运行配置&#10;- 添加 UserApplication 的 Spring Boot 运行配置到 IDEA 项目中">
       <created>1762422372406</created>
@@ -538,7 +546,14 @@
       <option name="project" value="LOCAL" />
       <updated>1767756764765</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="feat(user): 添加用户登出接口并更新拦截器配置&#10;&#10;- 在InterceptorConfig中为/userLogOut/**路径添加认证拦截&#10;- 在UserServiceImpl中注入PermissionMapper依赖&#10;- 简化deleteUser方法的事务处理逻辑，移除冗余的角色菜单删除操作">
+      <created>1767787155641</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1767787155641</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -556,7 +571,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feat(train): 实现列车途径站点管理功能&#10;&#10;- 新增AdminTrainPassStationController控制器，提供查询和添加途径站点的接口&#10;- 新增AdminTrainPassStationMapper数据访问层，实现途径站点的数据库操作&#10;- 新增AdminTrainPassStationService服务层接口及实现类&#10;- 在TrainPassStationEntity实体类中添加车次编号和站点名称字段&#10;- 修改AdminTrainMapper和AdminTrainStationMapper添加查询车次编号和站点名称的方法&#10;- 调整到达时间和离站时间字段类型为String格式&#10;- 实现在查询途径站点时自动关联车次编号和站点名称" />
     <MESSAGE value="feat(train): 实现列车途径站点修改功能&#10;&#10;- 在AdminTrainPassStationController中添加updateTrainPassStation接口&#10;- 在AdminTrainPassStationMapper中添加@Update注解实现数据库更新操作&#10;- 在AdminTrainPassStationService中实现updateTrainPassStation业务逻辑&#10;- 使用TimeCalculationExample计算停留时间并更新途径站点信息&#10;- 完善相关方法注释和参数处理逻辑" />
     <MESSAGE value="feat(train): 实现列车途径站点删除功能&#10;&#10;- 在AdminTrainPassStationController中添加deleteTrainPassStation接口，&#10;  支持批量删除途径站点功能&#10;- 在AdminTrainPassStationMapper中添加@Delete注解实现数据库删除操作&#10;- 在AdminTrainPassStationService中实现deleteTrainPassStation业务逻辑&#10;- 优化import语句，使用通配符导入MyBatis注解&#10;- 更新工作区配置文件和相关编译文件" />
     <MESSAGE value="feat(train): 添加车票管理和查询功能&#10;&#10;- 在AdminTrainMapper中添加查询车次和车厢信息的方法&#10;- 在AdminTrainServiceImpl中集成TicketMapper并添加车票创建逻辑&#10;- 创建TicketController提供车票信息查询和修改接口&#10;- 实现TicketMapper数据访问层支持车票信息操作&#10;- 添加TicketServiceImpl业务逻辑处理车票相关功能&#10;- 创建TrainTicketEntity实体类定义车票信息表结构&#10;- 实现TimeObject工具类处理时间格式转换&#10;- 在列车添加流程中自动创建对应的车票信息记录" />
@@ -581,7 +595,8 @@
     <MESSAGE value="feat(train): 优化列车座位管理和Redis缓存策略&#10;&#10;- 修改AdminTrainMapper中addTrainSeat方法，添加座位ID参数并更新SQL插入语句&#10;- 在删除列车时增加Redis缓存清理逻辑，包括车厢座位和列车相关缓存&#10;- 添加deleteCarriageSeatCache和deleteTrainCache私有方法处理Redis缓存删除&#10;- 使用雪花算法生成座位ID，并在添加座位时同步存储座位信息到Redis&#10;- 移除座位统计缓存中多余的carriageId字段&#10;- 优化RedisConfig配置，使用GenericJackson2JsonRedisSerializer并设置Hash序列化器&#10;- 更新RedisUtil的del方法返回删除key的数量，新增keys方法支持模式匹配&#10;- 在IDEA工作区配置中记录相关变更和任务信息" />
     <MESSAGE value="feat(user): 添加用户权限管理功能和删除用户接口&#10;&#10;- 新增PermissionController、PermissionEntity、PermissionMapper和PermissionService&#10;- 实现用户权限的添加、查询、修改和删除功能&#10;- 在UserController中添加userLogOut接口用于注销用户&#10;- 更新UserMapper和UserServiceImpl添加删除用户相关方法&#10;- 添加AdminViewController、AdminViewMapper和AdminViewService基础类&#10;- 新增UserRoleEntity实体类用于用户角色管理" />
     <MESSAGE value="feat(train): 添加删除列车车票信息功能&#10;&#10;- 在AdminTrainMapper中新增deleteTrainTickets方法用于删除指定列车的车票价格信息&#10;- 在AdminTrainServiceImpl的deleteTrain方法中调用deleteTrainTickets实现级联删除&#10;- 使用@Delete注解执行DELETE FROM ticket_price WHERE train_id条件删除" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat(train): 添加删除列车车票信息功能&#10;&#10;- 在AdminTrainMapper中新增deleteTrainTickets方法用于删除指定列车的车票价格信息&#10;- 在AdminTrainServiceImpl的deleteTrain方法中调用deleteTrainTickets实现级联删除&#10;- 使用@Delete注解执行DELETE FROM ticket_price WHERE train_id条件删除" />
+    <MESSAGE value="feat(user): 添加用户登出接口并更新拦截器配置&#10;&#10;- 在InterceptorConfig中为/userLogOut/**路径添加认证拦截&#10;- 在UserServiceImpl中注入PermissionMapper依赖&#10;- 简化deleteUser方法的事务处理逻辑，移除冗余的角色菜单删除操作" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat(user): 添加用户登出接口并更新拦截器配置&#10;&#10;- 在InterceptorConfig中为/userLogOut/**路径添加认证拦截&#10;- 在UserServiceImpl中注入PermissionMapper依赖&#10;- 简化deleteUser方法的事务处理逻辑，移除冗余的角色菜单删除操作" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -603,7 +618,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/ticketing-system-user/src/main/java/com/ticking/controller/UserController.java</url>
-          <line>97</line>
+          <line>98</line>
           <option name="timeStamp" value="14" />
         </line-breakpoint>
       </breakpoints>

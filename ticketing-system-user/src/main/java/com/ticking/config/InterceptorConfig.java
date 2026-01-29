@@ -19,6 +19,7 @@ public class InterceptorConfig implements WebMvcConfigurer {
                 .addPathPatterns("/passion/**", "/passenger/**", "/getCurrentUser", "/getCurrentUserId")  // 需要认证的路径
                 .addPathPatterns("/trainOrder/**", "/trainOrder/**", "/getCurrentUser", "/getCurrentUserId")  //  需要认证的路径
                  .addPathPatterns("/userLogOut/**", "/userLogOut/**", "/getCurrentUser", "/getCurrentUserId")
+                 .addPathPatterns("/personMessages/**", "/personMessages/**", "/getCurrentUser", "/getCurrentUserId")
                 .excludePathPatterns("/login", "/register");  // 不需要认证的路径
     }
 }
